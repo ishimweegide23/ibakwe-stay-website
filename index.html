@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibakwe Stay | Premium Real Estate in Rwanda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="logoo.PNG" type="image/png">
+  <style>
+    :root {
+      --primary: #2D5D7C;
+      --primary-light: #3A7CA5;
+      --secondary: #F9A825;
+      --accent: #E63946;
+      --dark: #1A1A2E;
+      --light: #F8F9FA;
+      --gray: #6C757D;
+      --gray-light: #E9ECEF;
+      --green: #2E8B57;
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(249, 168, 37, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(249, 168, 37, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(45, 93, 124, 0.35);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(45, 93, 124, 0.5);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header .sub-badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.12);
+      padding: 6px 25px;
+      border-radius: 30px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 span {
+      color: var(--secondary);
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 12px 0;
+    }
+
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      padding: 10px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      margin-right: 12px;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin-left: 28px;
+      position: relative;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--dark);
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .nav-links .active::after {
+      width: 100%;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 5px;
+      font-size: 0.7rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 210px;
+      box-shadow: var(--shadow-lg);
+      border-radius: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      padding: 10px 0;
+      margin-top: 8px;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary);
+      background-color: var(--gray-light);
+    }
+
+    .nav-links li:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      top: 120%;
+    }
+
+    .nav-links li:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* ===== HERO SLIDER SECTION ===== */
+    .hero-slider {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 1s ease;
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .slide-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(45, 93, 124, 0.88), rgba(45, 93, 124, 0.6));
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      color: white;
+    }
+
+    .slide-content .badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 6px 22px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--secondary);
+      border: 1px solid rgba(249, 168, 37, 0.3);
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .slide-content h1 {
+      font-size: 4.2rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .slide-content h1 span {
+      color: var(--secondary);
+    }
+
+    .slide-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 35px;
+      max-width: 500px;
+    }
+
+    .slide-content .btn {
+      margin-right: 15px;
+    }
+
+    /* Slider Navigation */
+    .slider-nav {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 12px;
+    }
+
+    .slider-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .slider-dot.active {
+      background: var(--secondary);
+      border-color: white;
+      transform: scale(1.2);
+    }
+
+    .slider-dot:hover {
+      background: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-arrow:hover {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+
+    .slider-arrow.prev {
+      left: 20px;
+    }
+
+    .slider-arrow.next {
+      right: 20px;
+    }
+
+    /* ===== SEARCH SECTION ===== */
+    .search-section {
+      padding: 60px 0;
+      background: white;
+      margin-top: -60px;
+      position: relative;
+      z-index: 5;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-wrapper {
+      background: var(--gray-light);
+      border-radius: 16px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      gap: 15px;
+      align-items: end;
+    }
+
+    .search-wrapper .form-group {
+      margin-bottom: 0;
+    }
+
+    .search-wrapper label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .search-wrapper input,
+    .search-wrapper select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .search-wrapper input:focus,
+    .search-wrapper select:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(249, 168, 37, 0.1);
+    }
+
+    .search-wrapper .btn {
+      padding: 12px 30px;
+      height: 50px;
+    }
+
+    /* ===== STATS BANNER ===== */
+    .stats-banner {
+      padding: 60px 0;
+      background: var(--primary);
+      color: white;
+    }
+
+    .stats-banner .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stats-banner .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .stats-banner .stat-item .label {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ===== PROPERTY TYPES ===== */
+    .property-types {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .type-card {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--light);
+      border-radius: 16px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .type-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .type-card i {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .type-card h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .type-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* ===== FEATURED PROPERTIES ===== */
+    .featured-section {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .property-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .property-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .property-card .badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--secondary);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+
+    .property-card .badge.featured {
+      background: var(--accent);
+    }
+
+    .property-card .badge.sale {
+      background: var(--green);
+    }
+
+    .property-card .badge.rent {
+      background: var(--primary-light);
+    }
+
+    .property-img {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .property-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .property-card:hover .property-img img {
+      transform: scale(1.05);
+    }
+
+    .property-img .price-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      padding: 6px 18px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .property-img .price-tag span {
+      font-weight: 400;
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .property-content {
+      padding: 22px 25px 25px;
+    }
+
+    .property-content h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .property-location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .property-location i {
+      margin-right: 6px;
+      color: var(--secondary);
+    }
+
+    .property-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 12px 0 18px;
+      padding: 12px 0;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .property-features .feature {
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .property-features .feature i {
+      margin-right: 5px;
+      color: var(--secondary);
+    }
+
+    .property-card .btn {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== TESTIMONIALS CAROUSEL ===== */
+    .testimonials-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonials-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 20px;
+    }
+
+    .testimonial-card {
+      background: var(--light);
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-card .quote-icon {
+      font-size: 3rem;
+      color: var(--secondary);
+      opacity: 0.2;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .testimonial-card .stars {
+      color: var(--secondary);
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card .testimonial-text {
+      font-style: italic;
+      color: var(--dark);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-card .author-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .testimonial-card .author-info img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--secondary);
+    }
+
+    .testimonial-card .author-info .details .name {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .testimonial-card .author-info .details .role {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .testimonial-card .author-info .details .role i {
+      color: var(--secondary);
+      margin-right: 4px;
+    }
+
+    .testimonial-card .tag {
+      display: inline-block;
+      padding: 2px 16px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-tenant {
+      background: rgba(46, 139, 87, 0.15);
+      color: var(--green);
+    }
+
+    .tag-landlord {
+      background: rgba(45, 93, 124, 0.15);
+      color: var(--primary);
+    }
+
+    .tag-seller {
+      background: rgba(249, 168, 37, 0.2);
+      color: #b8860b;
+    }
+
+    .tag-buyer {
+      background: rgba(230, 57, 70, 0.12);
+      color: var(--accent);
+    }
+
+    .tag-guest {
+      background: rgba(58, 124, 165, 0.12);
+      color: var(--primary-light);
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .testimonial-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .testimonial-dot.active {
+      background: var(--secondary);
+      transform: scale(1.3);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-content h2 span {
+      color: var(--secondary);
+    }
+
+    .cta-content p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .cta-content .btn {
+      margin: 0 10px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0 20px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h3 {
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+
+    .footer-col p {
+      margin-bottom: 15px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .footer-contact i {
+      margin-right: 12px;
+      color: var(--secondary);
+      margin-top: 3px;
+      width: 18px;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .social-media a:hover {
+      background-color: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: 0 2px 20px rgba(249, 168, 37, 0.4);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .slide-content h1 {
+        font-size: 3.2rem;
+      }
+
+      .search-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .slide-content h1 {
+        font-size: 2.8rem;
+      }
+
+      .slide {
+        padding: 0 30px;
+      }
+
+      .slider-arrow {
+        display: none;
+      }
+
+      .types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-banner .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .search-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background-color: var(--gray-light);
+        border-radius: 8px;
+        margin-top: 5px;
+      }
+
+      .dropdown-menu.active {
+        display: block;
+      }
+
+      .slider-container {
+        height: 80vh;
+        min-height: 500px;
+      }
+
+      .slide {
+        padding: 0 20px;
+      }
+
+      .slide-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .slide-content p {
+        font-size: 1rem;
+      }
+
+      .slide-content .btn {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .search-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .search-wrapper .btn {
+        width: 100%;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .types-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-banner .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .stats-banner .stat-item .number {
+        font-size: 2rem;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        padding: 30px 20px;
+      }
+
+      .testimonial-card .testimonial-text {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+
+      .logo img {
+        height: 35px;
+      }
+
+      .slide-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .types-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-banner .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testimonial-card .author-info {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logoo.PNG" alt="Ibakwe Stay">
+        <h1>Ibakwe Stay</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn">Properties <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="apartment.html">Apartments</a></li>
+              <li><a href="For rent.html">For Rent</a></li>
+              <li><a href="For sale.html">For Sale</a></li>
+              <li><a href="Short-stay.html">Short Stay</a></li>
+            </ul>
+          </li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SLIDER ===== -->
+  <section class="hero-slider">
+    <div class="slider-container">
+      <!-- Slide 1 -->
+      <div class="slide active" data-index="0">
+        <div class="slide-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        </div>
+        <div class="slide-content">
+          <div class="badge"><i class="fas fa-home"></i> Welcome to Ibakwe Stay</div>
+          <h1>Find Your <span>Perfect Home</span> in Kigali</h1>
+          <p>Discover premium properties across Rwanda's vibrant capital city. Whether you're looking to rent, buy, or
+            invest, we have the perfect solution for you.</p>
+          <a href="For rent.html" class="btn btn-primary"><i class="fas fa-search"></i> Explore Properties</a>
+          <a href="about us.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide" data-index="1">
+        <div class="slide-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        </div>
+        <div class="slide-content">
+          <div class="badge"><i class="fas fa-building"></i> Luxury Living</div>
+          <h1>Premium <span>Apartments</span> for Rent</h1>
+          <p>Explore our collection of modern apartments in Kigali's most sought-after neighborhoods with premium
+            amenities.</p>
+          <a href="apartment.html" class="btn btn-primary"><i class="fas fa-building"></i> View Apartments</a>
+          <a href="For rent.html" class="btn btn-outline">Browse Rentals</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide" data-index="2">
+        <div class="slide-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        </div>
+        <div class="slide-content">
+          <div class="badge"><i class="fas fa-crown"></i> Luxury Villas</div>
+          <h1>Exclusive <span>Villas</span> for Sale</h1>
+          <p>Discover our handpicked selection of luxury villas in Kigali's most prestigious neighborhoods. Your dream
+            home awaits.</p>
+          <a href="For sale.html" class="btn btn-primary"><i class="fas fa-crown"></i> View Villas</a>
+          <a href="about us.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide" data-index="3">
+        <div class="slide-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80');">
+        </div>
+        <div class="slide-content">
+          <div class="badge"><i class="fas fa-hotel"></i> Short Stay</div>
+          <h1>Premium <span>Short-Stay</span> Homes</h1>
+          <p>Fully furnished vacation homes and executive stays in Kigali. Perfect for business trips, family vacations,
+            or extended stays.</p>
+          <a href="Short-stay.html" class="btn btn-primary"><i class="fas fa-hotel"></i> Book Now</a>
+          <a href="service.html" class="btn btn-outline">Our Services</a>
+        </div>
+      </div>
+
+      <!-- Slider Arrows -->
+      <button class="slider-arrow prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-arrow next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+
+      <!-- Slider Dots -->
+      <div class="slider-nav" id="sliderDots">
+        <span class="slider-dot active" data-index="0"></span>
+        <span class="slider-dot" data-index="1"></span>
+        <span class="slider-dot" data-index="2"></span>
+        <span class="slider-dot" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEARCH SECTION ===== -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-wrapper">
+        <div class="form-group">
+          <label><i class="fas fa-map-marker-alt"></i> Location</label>
+          <select>
+            <option value="">All Locations</option>
+            <option value="nyarutarama">Nyarutarama</option>
+            <option value="kiyovu">Kiyovu</option>
+            <option value="kacyiru">Kacyiru</option>
+            <option value="kimihurura">Kimihurura</option>
+            <option value="gikondo">Gikondo</option>
+            <option value="kicukiro">Kicukiro</option>
+            <option value="remera">Remera</option>
+            <option value="gisozi">Gisozi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-tag"></i> Property Type</label>
+          <select>
+            <option value="">All Types</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="villa">Villa</option>
+            <option value="studio">Studio</option>
+            <option value="penthouse">Penthouse</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-dollar-sign"></i> Budget</label>
+          <select>
+            <option value="">Any Budget</option>
+            <option value="0-500k">Under 500K</option>
+            <option value="500k-1m">500K - 1M</option>
+            <option value="1m-2m">1M - 2M</option>
+            <option value="2m-5m">2M - 5M</option>
+            <option value="5m+">5M+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-bed"></i> Bedrooms</label>
+          <select>
+            <option value="">Any</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4+ Bedrooms</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="searchBtn"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BANNER ===== -->
+  <section class="stats-banner">
+    <div class="container">
+      <div class="stat-item">
+        <div class="number">1,500+</div>
+        <div class="label">Properties Available</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">10K+</div>
+        <div class="label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">15</div>
+        <div class="label">Kigali Sectors</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">98%</div>
+        <div class="label">Satisfaction Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROPERTY TYPES ===== -->
+  <section class="property-types">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-badge">What We Offer</div>
+        <h2>Explore <span>Property</span> Types</h2>
+        <p>Find the perfect property type that matches your needs and lifestyle</p>
+      </div>
+      <div class="types-grid">
+        <a href="apartment.html" class="type-card">
+          <i class="fas fa-building"></i>
+          <h4>Apartments</h4>
+          <p>Modern living spaces in prime locations</p>
+        </a>
+        <a href="For rent.html" class="type-card">
+          <i class="fas fa-home"></i>
+          <h4>Houses</h4>
+          <p>Spacious homes for families</p>
+        </a>
+        <a href="For sale.html" class="type-card">
+          <i class="fas fa-crown"></i>
+          <h4>Villas</h4>
+          <p>Luxury living at its finest</p>
+        </a>
+        <a href="Short-stay.html" class="type-card">
+          <i class="fas fa-hotel"></i>
+          <h4>Short Stay</h4>
+          <p>Fully furnished vacation homes</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PROPERTIES ===== -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-badge"><i class="fas fa-star"></i> Top Picks</div>
+        <h2>Featured <span>Properties</span></h2>
+        <p>Explore our handpicked selection of premium properties in Kigali</p>
+      </div>
+      <div class="properties-grid">
+        <!-- Property 1 -->
+        <div class="property-card">
+          <div class="badge rent">For Rent</div>
+          <div class="property-img">
+            <img
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Luxury Apartment">
+            <div class="price-tag">RWF 1,200,000 <span>/month</span></div>
+          </div>
+          <div class="property-content">
+            <h3>Nyarutarama Luxury Residence</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Nyarutarama, Kigali</span>
+            </div>
+            <div class="property-features">
+              <span class="feature"><i class="fas fa-bed"></i> 3 Beds</span>
+              <span class="feature"><i class="fas fa-bath"></i> 2.5 Baths</span>
+              <span class="feature"><i class="fas fa-vector-square"></i> 180 m²</span>
+            </div>
+            <a href="apartment.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Property 2 -->
+        <div class="property-card">
+          <div class="badge sale">For Sale</div>
+          <div class="property-img">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Luxury Villa">
+            <div class="price-tag">RWF 450,000,000</div>
+          </div>
+          <div class="property-content">
+            <h3>Nyarutarama Luxury Villa</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Nyarutarama, Kigali</span>
+            </div>
+            <div class="property-features">
+              <span class="feature"><i class="fas fa-bed"></i> 5 Beds</span>
+              <span class="feature"><i class="fas fa-bath"></i> 4 Baths</span>
+              <span class="feature"><i class="fas fa-vector-square"></i> 350 m²</span>
+            </div>
+            <a href="For sale.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Property 3 -->
+        <div class="property-card">
+          <div class="badge featured">Featured</div>
+          <div class="property-img">
+            <img
+              src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+              alt="Short Stay">
+            <div class="price-tag">RWF 1,800,000 <span>/night</span></div>
+          </div>
+          <div class="property-content">
+            <h3>Kacyiru Executive House</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kacyiru, Kigali</span>
+            </div>
+            <div class="property-features">
+              <span class="feature"><i class="fas fa-bed"></i> 5 Beds</span>
+              <span class="feature"><i class="fas fa-bath"></i> 4 Baths</span>
+              <span class="feature"><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+            </div>
+            <a href="Short-stay.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="apartment.html" class="btn btn-secondary">View All Properties <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS CAROUSEL ===== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-badge"><i class="fas fa-quote-left"></i> Testimonials</div>
+        <h2>What Our <span>Clients</span> Say</h2>
+        <p>Real stories from real people who found their dream home with us</p>
+      </div>
+
+      <div class="testimonials-carousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Testimonial 1 - Tenant -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"I moved to Kigali for work and needed a place fast. Ibakwe Stay showed me
+                three verified apartments in Nyarutarama within two days, and I signed my lease by the weekend. No
+                hidden fees, no stress."</p>
+              <div class="author-info">
+                <img src="images/testimony1.png" alt="Sarah M.">
+                <div class="details">
+                  <div class="name">kwibuka M.</div>
+                  <div class="role"><i class="fas fa-user"></i> Tenant, Nyarutarama</div>
+                  <span class="tag tag-tenant">Tenant</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 - Landlord -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"I list two rental houses in Kicukiro through Ibakwe Stay, and both stay
+                occupied by tenants they've screened properly. They handle viewings and paperwork so I only get involved
+                when it matters."</p>
+              <div class="author-info">
+                <img src="images/testimony2.png" alt="Jean Paul N.">
+                <div class="details">
+                  <div class="name">Keza N.</div>
+                  <div class="role"><i class="fas fa-user"></i> Landlord, Kicukiro</div>
+                  <span class="tag tag-landlord">Landlord</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 - Seller -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"I sold my family's plot in Kiyovu through Ibakwe Stay and got the best price
+                in the market. Their photography, pricing advice, and negotiation with buyers made the whole process
+                painless."</p>
+              <div class="author-info">
+                <img src="images/testimony3.png" alt="Thomas R.">
+                <div class="details">
+                  <div class="name">Laira R.</div>
+                  <div class="role"><i class="fas fa-user"></i> Seller, Kiyovu</div>
+                  <span class="tag tag-seller">Seller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 - Buyer -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"As a first-time buyer, I was nervous about the whole process. The Ibakwe Stay
+                team walked me through financing, inspections, and title transfer for my Gisozi home, step by step."</p>
+              <div class="author-info">
+                <img src="images/testimony4.png" alt="Aline U.">
+                <div class="details">
+                  <div class="name">Alex U.</div>
+                  <div class="role"><i class="fas fa-user"></i> Buyer, Gisozi</div>
+                  <span class="tag tag-buyer">Buyer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 - Guest -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"The short-stay villa we booked in Kacyiru for our family visit was stunning
+                and exactly as pictured. Booking, check-in, and support during our stay were all smooth."</p>
+              <div class="author-info">
+                <img src="images/testimony5.png" alt="Aisha K.">
+                <div class="details">
+                  <div class="name">Aisha K.</div>
+                  <div class="role"><i class="fas fa-user"></i> Guest, Kacyiru</div>
+                  <span class="tag tag-guest">Guest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 - Landlord -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <i class="fas fa-quote-right quote-icon"></i>
+              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"I turned my late parents' home in Remera into a rental with Ibakwe Stay's
+                guidance on pricing and legal paperwork. It's been fully rented for over a year with zero vacancy gaps."
+              </p>
+              <div class="author-info">
+                <img src="images/testimony6.png" alt="Olivier H.">
+                <div class="details">
+                  <div class="name">Olivier H.</div>
+                  <div class="role"><i class="fas fa-user"></i> Landlord, Remera</div>
+                  <span class="tag tag-landlord">Landlord</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-nav" id="testimonialDots">
+          <span class="testimonial-dot active" data-index="0"></span>
+          <span class="testimonial-dot" data-index="1"></span>
+          <span class="testimonial-dot" data-index="2"></span>
+          <span class="testimonial-dot" data-index="3"></span>
+          <span class="testimonial-dot" data-index="4"></span>
+          <span class="testimonial-dot" data-index="5"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Find Your <span>Dream Home</span>?</h2>
+        <p>Our team of experts is here to help you every step of the way. Contact us today to schedule a viewing or get
+          personalized recommendations.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us Now <i class="fas fa-arrow-right"></i></a>
+        <a href="For rent.html" class="btn btn-outline">Browse Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Ibakwe Stay</h3>
+          <p>Rwanda's premier real estate platform, connecting buyers, renters, and investors with the best properties
+            across Kigali. Your trusted partner since 2025.</p>
+          <div class="social-media">
+            <a href="https://www.facebook.com/RwandaHome-1915619678653717/" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/African_Prop" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/your_instagram_link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+250780035482" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="apartment.html">Apartments</a></li>
+            <li><a href="For rent.html">For Rent</a></li>
+            <li><a href="For sale.html">For Sale</a></li>
+            <li><a href="Short-stay.html">Short Stay</a></li>
+            <li><a href="service.html">Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> KN 4 Ave, Kigali, Rwanda</p>
+            <p><i class="fas fa-phone-alt"></i> +250 780 035 482</p>
+            <p><i class="fas fa-envelope"></i> info@ibakwe.rw</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</p>
+            <p><i class="fas fa-clock"></i> Sat: 9AM - 2PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ibakwe Stay. All rights reserved. Proudly Rwandan. <i class="fas fa-heart"
+            style="color: var(--secondary);"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // ===== MOBILE MENU =====
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+
+      mobileMenuBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+        this.querySelector('i').classList.toggle('fa-times');
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+        });
+      });
+
+      // ===== DROPDOWN MENU (MOBILE) =====
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function (e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.querySelector('.dropdown-menu').classList.toggle('active');
+            this.querySelector('.dropdown-btn i').classList.toggle('fa-chevron-up');
+          }
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown') && window.innerWidth <= 768) {
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('active');
+          });
+          document.querySelectorAll('.dropdown-btn i').forEach(icon => {
+            icon.classList.remove('fa-chevron-up');
+          });
+        }
+      });
+
+      // ===== STICKY HEADER =====
+      window.addEventListener('scroll', function () {
+        const header = document.getElementById('header');
+        if (window.scrollY > 80) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // ===== HERO SLIDER =====
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      const totalSlides = slides.length;
+      let autoSlideInterval;
+
+      function goToSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          dots[i].classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % totalSlides;
+        goToSlide(next);
+      }
+
+      function prevSlide() {
+        const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(prev);
+      }
+
+      // Dot clicks
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          goToSlide(index);
+          resetAutoSlide();
+        });
+      });
+
+      // Arrow buttons
+      document.getElementById('nextBtn').addEventListener('click', function () {
+        nextSlide();
+        resetAutoSlide();
+      });
+
+      document.getElementById('prevBtn').addEventListener('click', function () {
+        prevSlide();
+        resetAutoSlide();
+      });
+
+      // Auto slide
+      function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+
+      startAutoSlide();
+
+      // Pause on hover
+      const sliderContainer = document.querySelector('.slider-container');
+      sliderContainer.addEventListener('mouseenter', function () {
+        clearInterval(autoSlideInterval);
+      });
+
+      sliderContainer.addEventListener('mouseleave', function () {
+        startAutoSlide();
+      });
+
+      // ===== TESTIMONIALS CAROUSEL =====
+      let currentTestimonial = 0;
+      const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+      const testimonialsTrack = document.getElementById('testimonialsTrack');
+      const totalTestimonials = testimonialSlides.length;
+      let testimonialInterval;
+
+      function goToTestimonial(index) {
+        if (index < 0) index = totalTestimonials - 1;
+        if (index >= totalTestimonials) index = 0;
+        testimonialsTrack.style.transform = `translateX(-${index * 100}%)`;
+        testimonialDots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        currentTestimonial = index;
+      }
+
+      function nextTestimonial() {
+        goToTestimonial(currentTestimonial + 1);
+      }
+
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          goToTestimonial(index);
+          resetTestimonialAutoSlide();
+        });
+      });
+
+      function startTestimonialAutoSlide() {
+        testimonialInterval = setInterval(nextTestimonial, 6000);
+      }
+
+      function resetTestimonialAutoSlide() {
+        clearInterval(testimonialInterval);
+        startTestimonialAutoSlide();
+      }
+
+      startTestimonialAutoSlide();
+
+      const testimonialCarousel = document.querySelector('.testimonials-carousel');
+      testimonialCarousel.addEventListener('mouseenter', function () {
+        clearInterval(testimonialInterval);
+      });
+
+      testimonialCarousel.addEventListener('mouseleave', function () {
+        startTestimonialAutoSlide();
+      });
+
+      // ===== BACK TO TOP =====
+      const backToTop = document.querySelector('.back-to-top');
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('active');
+        } else {
+          backToTop.classList.remove('active');
+        }
+      });
+
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== SEARCH BUTTON =====
+      document.getElementById('searchBtn').addEventListener('click', function (e) {
+        e.preventDefault();
+        const location = document.querySelector('.search-wrapper select:nth-child(1)').value;
+        const type = document.querySelector('.search-wrapper select:nth-child(2)').value;
+        const budget = document.querySelector('.search-wrapper select:nth-child(3)').value;
+        const bedrooms = document.querySelector('.search-wrapper select:nth-child(4)').value;
+
+        let query = 'Searching for';
+        if (type) query += ` ${type}`;
+        if (location) query += ` in ${location}`;
+        if (budget) query += ` with budget ${budget}`;
+        if (bedrooms) query += ` with ${bedrooms} bedroom(s)`;
+
+        alert(query + '\n\nOur team will show you matching properties. Redirecting to properties page...');
+        window.location.href = 'apartment.html';
+      });
+
+      // ===== STATS ANIMATION =====
+      function animateStats() {
+        const stats = document.querySelectorAll('.stats-banner .stat-item .number');
+        stats.forEach(stat => {
+          const text = stat.textContent;
+          const hasPlus = text.includes('+');
+          const hasPercent = text.includes('%');
+          const target = parseInt(text.replace(/[+,%]/g, ''));
+          let count = 0;
+          const duration = 2000;
+          const increment = target / (duration / 16);
+
+          const timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+              count = target;
+              clearInterval(timer);
+            }
+            let display = Math.floor(count);
+            if (hasPlus) display += '+';
+            if (hasPercent) display += '%';
+            stat.textContent = display;
+          }, 16);
+        });
+      }
+
+      const statsSection = document.querySelector('.stats-banner');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+    });
+  </script>
+</body>
+
+</html>
+<!-- layout adjustment 1 -->
+
+<!-- layout adjustment 2 -->
+
+<!-- layout adjustment 3 -->
+
+<!-- layout adjustment 4 -->
+
+<!-- layout adjustment 5 -->
+
+<!-- layout adjustment 6 -->
+
+<!-- layout adjustment 7 -->
+
+<!-- layout adjustment 8 -->
+
+<!-- layout adjustment 9 -->
+
+<!-- layout adjustment 10 -->
+
+<!-- layout adjustment 11 -->
+
+<!-- layout adjustment 12 -->
+
+<!-- layout adjustment 13 -->
+
+<!-- layout adjustment 14 -->
+
+<!-- layout adjustment 15 -->
+
+<!-- layout adjustment 16 -->
+
+<!-- layout adjustment 17 -->
+
+<!-- layout adjustment 18 -->
+
+<!-- layout adjustment 19 -->
+
+<!-- layout adjustment 20 -->
+
+<!-- layout adjustment 21 -->
+
+<!-- layout adjustment 22 -->
+
+<!-- layout adjustment 23 -->
+
+<!-- layout adjustment 24 -->
+
+<!-- layout adjustment 25 -->
+
+<!-- layout adjustment 26 -->
+
+<!-- layout adjustment 27 -->
+
+<!-- layout adjustment 28 -->
+
+<!-- layout adjustment 29 -->
+
+<!-- layout adjustment 30 -->
+
+<!-- layout adjustment 31 -->
+
+<!-- layout adjustment 1 -->
+
+<!-- layout adjustment 2 -->
+
+<!-- layout adjustment 3 -->
+
+<!-- layout adjustment 4 -->
+
+<!-- layout adjustment 5 -->
+
+<!-- layout adjustment 6 -->
+
+<!-- layout adjustment 7 -->
+
+<!-- layout adjustment 8 -->
+
+<!-- layout adjustment 9 -->
+
+<!-- layout adjustment 10 -->
+
+<!-- layout adjustment 11 -->
+
+<!-- layout adjustment 12 -->
+
+<!-- layout adjustment 13 -->
+
+<!-- layout adjustment 14 -->
+
+<!-- layout adjustment 15 -->
+
+<!-- layout adjustment 16 -->
+
+<!-- layout adjustment 17 -->
+
+<!-- layout adjustment 18 -->
+
+<!-- layout adjustment 19 -->
+
+<!-- layout adjustment 20 -->
+
+<!-- layout adjustment 21 -->
+
+<!-- layout adjustment 22 -->
+
+<!-- layout adjustment 23 -->
+
+<!-- layout adjustment 24 -->
+
+<!-- layout adjustment 25 -->
+
+<!-- layout adjustment 26 -->
+
+<!-- layout adjustment 27 -->
+
+<!-- layout adjustment 28 -->
+
+<!-- layout adjustment 29 -->
+
+<!-- layout adjustment 30 -->
+
+<!-- layout adjustment 31 -->
