@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us | Ibakwe Stay - Premium Real Estate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="logoo.PNG" type="image/png">
+  <style>
+    :root {
+      --primary: #2D5D7C;
+      --primary-light: #3A7CA5;
+      --secondary: #F9A825;
+      --accent: #E63946;
+      --dark: #1A1A2E;
+      --light: #F8F9FA;
+      --gray: #6C757D;
+      --gray-light: #E9ECEF;
+      --green: #25D366;
+      --success: #2E8B57;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(249, 168, 37, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(249, 168, 37, 0.5);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--green);
+      color: white;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1da851;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header .sub-badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.12);
+      padding: 6px 25px;
+      border-radius: 30px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 span {
+      color: var(--secondary);
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 12px 0;
+    }
+
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      padding: 10px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      margin-right: 12px;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin-left: 28px;
+      position: relative;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--dark);
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .nav-links .active::after {
+      width: 100%;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 5px;
+      font-size: 0.7rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 210px;
+      box-shadow: var(--shadow-lg);
+      border-radius: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      padding: 10px 0;
+      margin-top: 8px;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary);
+      background-color: var(--gray-light);
+    }
+
+    .nav-links li:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      top: 120%;
+    }
+
+    .nav-links li:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .contact-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 60px;
+      background: linear-gradient(135deg, rgba(45, 93, 124, 0.92), rgba(45, 93, 124, 0.75)),
+        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(to top, var(--light), transparent);
+      z-index: 1;
+    }
+
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-hero .badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 25px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      border: 1px solid rgba(249, 168, 37, 0.3);
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .contact-hero h1 span {
+      color: var(--secondary);
+    }
+
+    .contact-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--secondary);
+    }
+
+    .contact-info h3 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-info .sub-text {
+      color: var(--gray);
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .contact-item:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item .icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(249, 168, 37, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-item .icon i {
+      font-size: 1.2rem;
+      color: var(--secondary);
+    }
+
+    .contact-item .text h4 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .contact-item .text p,
+    .contact-item .text a {
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .contact-item .text a:hover {
+      color: var(--primary);
+    }
+
+    /* Social Connect */
+    .social-connect {
+      margin-top: 30px;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .social-connect h4 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .social-connect .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-connect .social-icons a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.3rem;
+      transition: var(--transition);
+    }
+
+    .social-connect .social-icons a:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(249, 168, 37, 0.3);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .contact-form h3 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-form .sub-text {
+      color: var(--gray);
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+
+    .form-group label i {
+      color: var(--secondary);
+      margin-right: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(249, 168, 37, 0.1);
+    }
+
+    .form-control.error {
+      border-color: var(--accent);
+    }
+
+    .form-control.success {
+      border-color: var(--success);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group .btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    /* Form Success Message */
+    .form-success {
+      display: none;
+      background: var(--success);
+      color: white;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .form-success i {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .form-success h4 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .form-success p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .form-error {
+      display: none;
+      background: var(--accent);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin-top: 15px;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== WHATSAPP SECTION ===== */
+    .whatsapp-section {
+      padding: 60px 0;
+      background: var(--gray-light);
+    }
+
+    .whatsapp-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .whatsapp-content h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .whatsapp-content h2 span {
+      color: var(--green);
+    }
+
+    .whatsapp-content p {
+      color: var(--gray);
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+    }
+
+    .whatsapp-content .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .whatsapp-icon-large {
+      text-align: center;
+    }
+
+    .whatsapp-icon-large i {
+      font-size: 6rem;
+      color: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-icon-large .number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 10px;
+    }
+
+    .whatsapp-icon-large .label {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* ===== MAP SECTION ===== */
+    .map-section {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .map-container {
+      height: 400px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0 20px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h3 {
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+
+    .footer-col p {
+      margin-bottom: 15px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .footer-contact i {
+      margin-right: 12px;
+      color: var(--secondary);
+      margin-top: 3px;
+      width: 18px;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .social-media a:hover {
+      background-color: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: 0 2px 20px rgba(249, 168, 37, 0.4);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .contact-hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .whatsapp-icon-large i {
+        font-size: 4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background-color: var(--gray-light);
+        border-radius: 8px;
+        margin-top: 5px;
+      }
+
+      .dropdown-menu.active {
+        display: block;
+      }
+
+      .contact-hero {
+        padding: 100px 0 40px;
+        min-height: 40vh;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 30px;
+      }
+
+      .whatsapp-box {
+        padding: 30px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+
+      .logo img {
+        height: 35px;
+      }
+
+      .contact-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-hero p {
+        font-size: 1rem;
+      }
+
+      .contact-item {
+        padding: 12px;
+      }
+
+      .contact-item .icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .social-connect .social-icons a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+
+      .whatsapp-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .whatsapp-icon-large .number {
+        font-size: 1.2rem;
+      }
+
+      .map-container {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logoo.PNG" alt="Ibakwe Stay">
+        <h1>Ibakwe Stay</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn">Properties <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="apartment.html">Apartments</a></li>
+              <li><a href="For rent.html">For Rent</a></li>
+              <li><a href="For sale.html">For Sale</a></li>
+              <li><a href="Short-stay.html">Short Stay</a></li>
+            </ul>
+          </li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="contact-hero">
+    <div class="container contact-hero-content">
+      <div class="badge"><i class="fas fa-headset"></i> Get In Touch</div>
+      <h1>Let's <span>Connect</span> With Us</h1>
+      <p>Have questions about properties or services? Our team is ready to assist you with all your housing needs in
+        Kigali.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge">Contact Information</div>
+        <h2>Get In <span>Touch</span></h2>
+        <p>Have questions about properties or services? Our team is ready to assist you with all your housing needs in
+          Kigali.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info fade-in">
+          <h3>Contact Information</h3>
+          <p class="sub-text">Reach out to us through any of the following channels and we'll get back to you promptly.
+          </p>
+
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="text">
+              <h4>Our Location</h4>
+              <p>KN 4 Avenue, Kigali, Rwanda</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="text">
+              <h4>Call Us</h4>
+              <a href="tel:+250780035482">+250 780 035 482</a>
+              <p style="font-size:0.8rem; color:var(--gray);">Available 8AM - 6PM</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="text">
+              <h4>Email Us</h4>
+              <a href="mailto:ishimwekwibukae@gmail.com">ishimwekwibukae@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="text">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/250780035482">+250 780 035 482</a>
+              <p style="font-size:0.8rem; color:var(--gray);">Fastest response</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon"><i class="fas fa-clock"></i></div>
+            <div class="text">
+              <h4>Working Hours</h4>
+              <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+              <p style="font-size:0.8rem; color:var(--gray);">Saturday: 9:00 AM - 2:00 PM</p>
+            </div>
+          </div>
+
+          <!-- Social Connect -->
+          <div class="social-connect">
+            <h4><i class="fas fa-share-alt" style="color:var(--secondary);"></i> Stay Connected</h4>
+            <p style="font-size:0.9rem; color:var(--gray); margin-bottom:15px;">Follow IBAKWE_STAY on social media</p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/ibakwe_stays" target="_blank" title="Instagram"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@ibakwe_stays" target="_blank" title="TikTok"><i
+                  class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/250780035482" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://twitter.com/African_Prop" target="_blank" title="Twitter"><i
+                  class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/RwandaHome-1915619678653717/" target="_blank" title="Facebook"><i
+                  class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form fade-in">
+          <h3>Send Us a Message</h3>
+          <p class="sub-text">Fill out the form below and we'll respond within 24 hours.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/moeqaajb" method="POST">
+            <input type="hidden" name="_subject" value="New Message from Ibakwe Stay Website">
+            <input type="hidden" name="_captcha" value="true">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label><i class="fas fa-user"></i> Full Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+250 780 035 482">
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-tag"></i> Subject</label>
+                <input type="text" name="subject" class="form-control" placeholder="What is this about?">
+              </div>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-comment"></i> Your Message</label>
+              <textarea name="message" class="form-control" placeholder="Write your message here..."
+                required></textarea>
+            </div>
+
+            <!-- Form Status Messages -->
+            <div id="formSuccess" class="form-success">
+              <i class="fas fa-check-circle"></i>
+              <h4>Message Sent Successfully!</h4>
+              <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+            </div>
+            <div id="formError" class="form-error">
+              <i class="fas fa-exclamation-circle"></i>
+              <p>There was an error sending your message. Please try again or contact us directly via WhatsApp.</p>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="submitBtn"><i class="fas fa-paper-plane"></i> Send
+                Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHATSAPP SECTION ===== -->
+  <section class="whatsapp-section">
+    <div class="container">
+      <div class="whatsapp-box fade-in">
+        <div class="whatsapp-content">
+          <h2>Chat on <span>WhatsApp</span></h2>
+          <p>Get instant responses from our team. We're just one click away!</p>
+          <a href="https://wa.me/250788303588" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Chat with +250 788 303 588
+          </a>
+          <div style="margin-top:20px;">
+            <span
+              style="display:inline-block; background:rgba(37,211,102,0.1); color:var(--green); padding:4px 16px; border-radius:20px; font-size:0.8rem; font-weight:500;">
+              <i class="fas fa-check-circle"></i> Usually responds within 5 minutes
+            </span>
+          </div>
+        </div>
+        <div class="whatsapp-icon-large">
+          <i class="fab fa-whatsapp"></i>
+          <div class="number">+250 780 035 482</div>
+          <div class="label">Available 24/7</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP SECTION ===== -->
+  <section class="map-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge"><i class="fas fa-map-pin"></i> Find Us</div>
+        <h2>Our <span>Location</span></h2>
+        <p>Visit our office in Kigali - we're always happy to welcome you</p>
+      </div>
+      <div class="map-container fade-in">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.490646524536!2d30.0586643147583!3d-1.953537537021184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca76b5e4e4b1d%3A0xfc3a6d9e7a9f3b1a!2sKigali%20Heights!5e0!3m2!1sen!2srw!4v1620000000000!5m2!1sen!2srw"
+          allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Ibakwe Stay</h3>
+          <p>Rwanda's premier real estate platform, connecting buyers, renters, and investors with the best properties
+            across Kigali. Founded in 2025.</p>
+          <div class="social-media">
+            <a href="https://www.facebook.com/RwandaHome-1915619678653717/" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/African_Prop" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/ibakwe_stays" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ibakwe_stays" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/250780035482" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="apartment.html">Apartments</a></li>
+            <li><a href="For rent.html">For Rent</a></li>
+            <li><a href="For sale.html">For Sale</a></li>
+            <li><a href="Short-stay.html">Short Stay</a></li>
+            <li><a href="service.html">Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> KN 4 Ave, Kigali, Rwanda</p>
+            <p><i class="fas fa-phone-alt"></i> +250 780 035 482</p>
+            <p><i class="fas fa-envelope"></i> info@ibakwe.rw</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</p>
+            <p><i class="fas fa-clock"></i> Sat: 9AM - 2PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ibakwe Stay. All rights reserved. Proudly Rwandan. <i class="fas fa-heart"
+            style="color: var(--secondary);"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // ===== Mobile Menu =====
+      $('.mobile-menu-btn').click(function () {
+        $('.nav-links').toggleClass('active');
+        $(this).find('i').toggleClass('fa-times');
+      });
+
+      $('.nav-links a').click(function () {
+        $('.nav-links').removeClass('active');
+        $('.mobile-menu-btn i').removeClass('fa-times');
+      });
+
+      // ===== Dropdown Menu =====
+      $('.dropdown-btn').click(function (e) {
+        if ($(window).width() <= 768) {
+          e.preventDefault();
+          $(this).siblings('.dropdown-menu').toggleClass('active');
+          $(this).find('i').toggleClass('fa-chevron-up');
+        }
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('.dropdown') && $(window).width() <= 768) {
+          $('.dropdown-menu').removeClass('active');
+          $('.dropdown-btn i').removeClass('fa-chevron-up');
+        }
+      });
+
+      // ===== Sticky Header =====
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 80) {
+          $('#header').addClass('scrolled');
+        } else {
+          $('#header').removeClass('scrolled');
+        }
+      });
+
+      // ===== Back to Top =====
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.back-to-top').addClass('active');
+        } else {
+          $('.back-to-top').removeClass('active');
+        }
+      });
+
+      $('.back-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+      });
+
+      // ===== Fade In Animation =====
+      function checkFadeIn() {
+        $('.fade-in').each(function () {
+          var elementTop = $(this).offset().top;
+          var scrollBottom = $(window).scrollTop() + $(window).height();
+          if (scrollBottom > elementTop + 50) {
+            $(this).addClass('visible');
+          }
+        });
+      }
+
+      $(window).on('scroll', function () {
+        checkFadeIn();
+      });
+      checkFadeIn();
+
+      // ===== Formspree Contact Form =====
+      $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = $(this);
+        var submitBtn = $('#submitBtn');
+        var originalText = submitBtn.html();
+        var formData = new FormData(this);
+
+        // Show loading state
+        submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...').prop('disabled', true);
+
+        // Hide previous messages
+        $('#formSuccess').hide();
+        $('#formError').hide();
+
+        $.ajax({
+          type: 'POST',
+          url: 'https://formspree.io/f/moeqaajb',
+          data: formData,
+          processData: false,
+          contentType: false,
+          dataType: 'json',
+          success: function (response) {
+            if (response.ok) {
+              // Show success message
+              $('#formSuccess').fadeIn(500);
+              form[0].reset();
+              // Auto hide after 10 seconds
+              setTimeout(function () {
+                $('#formSuccess').fadeOut(500);
+              }, 10000);
+            } else {
+              $('#formError').fadeIn(500);
+            }
+            submitBtn.html(originalText).prop('disabled', false);
+          },
+          error: function () {
+            $('#formError').fadeIn(500);
+            submitBtn.html(originalText).prop('disabled', false);
+            // Auto hide after 8 seconds
+            setTimeout(function () {
+              $('#formError').fadeOut(500);
+            }, 8000);
+          }
+        });
+      });
+
+      // ===== Smooth Scroll =====
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        if (target === '#') return;
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 80
+        }, 500);
+      });
+    });
+  </script>
+</body>
+
+</html>
