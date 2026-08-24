@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Our Services | Ibakwe Stay - Premium Real Estate Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="logoo.PNG" type="image/png">
+  <style>
+    :root {
+      --primary: #2D5D7C;
+      --primary-light: #3A7CA5;
+      --secondary: #F9A825;
+      --accent: #E63946;
+      --dark: #1A1A2E;
+      --light: #F8F9FA;
+      --gray: #6C757D;
+      --gray-light: #E9ECEF;
+      --green: #2E8B57;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(249, 168, 37, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(249, 168, 37, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(45, 93, 124, 0.35);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(45, 93, 124, 0.5);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header .sub-badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.12);
+      padding: 6px 25px;
+      border-radius: 30px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 span {
+      color: var(--secondary);
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 12px 0;
+    }
+
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      padding: 10px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      margin-right: 12px;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin-left: 28px;
+      position: relative;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--dark);
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .nav-links .active::after {
+      width: 100%;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 5px;
+      font-size: 0.7rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      width: 210px;
+      box-shadow: var(--shadow-lg);
+      border-radius: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      padding: 10px 0;
+      margin-top: 8px;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary);
+      background-color: var(--gray-light);
+    }
+
+    .nav-links li:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      top: 120%;
+    }
+
+    .nav-links li:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .services-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, rgba(45, 93, 124, 0.92), rgba(45, 93, 124, 0.75)),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(to top, var(--light), transparent);
+      z-index: 1;
+    }
+
+    .services-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .services-hero .badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 25px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      border: 1px solid rgba(249, 168, 37, 0.3);
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .services-hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .services-hero h1 span {
+      color: var(--secondary);
+    }
+
+    .services-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* ===== SERVICES OVERVIEW ===== */
+    .services-overview {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .service-card .icon-wrapper {
+      background: var(--gray-light);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .service-card .icon-wrapper i {
+      font-size: 3.5rem;
+      color: var(--secondary);
+    }
+
+    .service-card .service-body {
+      padding: 30px;
+    }
+
+    .service-card .service-body h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card .service-body p {
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .service-features {
+      margin-bottom: 20px;
+    }
+
+    .service-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+
+    .service-feature i {
+      color: var(--secondary);
+      margin-right: 12px;
+      margin-top: 3px;
+      font-size: 0.9rem;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== PROPERTY MANAGEMENT SECTION ===== */
+    .management-section {
+      padding: 80px 0;
+      background: var(--gray-light);
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .management-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+
+    .management-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .management-image .floating-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 15px 25px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+    }
+
+    .management-image .floating-badge .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .management-image .floating-badge .label {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    .management-content h2 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .management-content h2 span {
+      color: var(--secondary);
+    }
+
+    .management-content p {
+      color: var(--gray);
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+    }
+
+    .management-list {
+      margin-bottom: 30px;
+    }
+
+    .management-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .management-list li i {
+      color: var(--secondary);
+      margin-right: 15px;
+      margin-top: 3px;
+      font-size: 1.1rem;
+    }
+
+    /* ===== STATS SECTION ===== */
+    .stats-section {
+      padding: 60px 0;
+      background: var(--primary);
+      color: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stats-grid .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .stats-grid .stat-item .label {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ===== PROCESS SECTION ===== */
+    .process-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--light);
+      border-radius: 16px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .process-step:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .process-step .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 15px rgba(249, 168, 37, 0.3);
+    }
+
+    .process-step h4 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .testimonial-card .stars {
+      color: var(--secondary);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card .quote {
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .testimonial-card .author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .testimonial-card .author img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-card .author .name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .testimonial-card .author .role {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .testimonial-card .author .role i {
+      color: var(--secondary);
+      margin-right: 4px;
+    }
+
+    .testimonial-card .tag {
+      display: inline-block;
+      padding: 2px 14px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-tenant {
+      background: rgba(46, 139, 87, 0.15);
+      color: var(--green);
+    }
+
+    .tag-landlord {
+      background: rgba(45, 93, 124, 0.15);
+      color: var(--primary);
+    }
+
+    .tag-seller {
+      background: rgba(249, 168, 37, 0.2);
+      color: #b8860b;
+    }
+
+    .tag-guest {
+      background: rgba(230, 57, 70, 0.12);
+      color: var(--accent);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-content h2 span {
+      color: var(--secondary);
+    }
+
+    .cta-content p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .cta-content .btn {
+      margin: 0 10px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0 20px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h3 {
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+
+    .footer-col p {
+      margin-bottom: 15px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .footer-contact i {
+      margin-right: 12px;
+      color: var(--secondary);
+      margin-top: 3px;
+      width: 18px;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .social-media a:hover {
+      background-color: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: 0 2px 20px rgba(249, 168, 37, 0.4);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .services-hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .management-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .management-image img {
+        height: 300px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background-color: var(--gray-light);
+        border-radius: 8px;
+        margin-top: 5px;
+      }
+
+      .dropdown-menu.active {
+        display: block;
+      }
+
+      .services-hero {
+        padding: 100px 0 60px;
+        min-height: 50vh;
+      }
+
+      .services-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .stats-grid .stat-item .number {
+        font-size: 2rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+
+      .logo img {
+        height: 35px;
+      }
+
+      .services-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .services-hero p {
+        font-size: 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .management-content h2 {
+        font-size: 2rem;
+      }
+
+      .cta-content h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logoo.PNG" alt="Ibakwe Stay">
+        <h1>Ibakwe Stay</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn">Properties <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="apartment.html">Apartments</a></li>
+              <li><a href="For rent.html">For Rent</a></li>
+              <li><a href="For sale.html">For Sale</a></li>
+              <li><a href="Short-stay.html">Short Stay</a></li>
+            </ul>
+          </li>
+          <li><a href="service.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="services-hero">
+    <div class="container services-hero-content">
+      <div class="badge"><i class="fas fa-concierge-bell"></i> Premium Services</div>
+      <h1>Your Complete <span>Real Estate</span> Solution</h1>
+      <p>From property management to buying and selling, we provide comprehensive services tailored to your needs in
+        Kigali.</p>
+      <a href="#services" class="btn btn-primary">Explore Our Services <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES OVERVIEW ===== -->
+  <section class="services-overview" id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge">What We Offer</div>
+        <h2>Our <span>Premium</span> Services</h2>
+        <p>Comprehensive real estate solutions for landlords, tenants, buyers, and sellers in Kigali</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Property Management -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="service-body">
+            <h3>Property Management</h3>
+            <p>Full-service management for your Kigali properties. We handle everything from tenant screening to
+              maintenance coordination.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Tenant screening & placement</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Rent collection & financial reporting
+              </div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> 24/7 maintenance coordination</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Regular property inspections</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Legal compliance & documentation</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Rental Assistance -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <div class="service-body">
+            <h3>Rental Assistance</h3>
+            <p>Find your perfect Kigali home with our expert guidance and comprehensive property database.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Customized property matching</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Neighborhood orientation tours</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Lease negotiation assistance</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Moving-in support services</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Rental contract review</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Find Your Home</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Property Sales -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="service-body">
+            <h3>Property Sales</h3>
+            <p>Expert guidance for buying and selling properties in Kigali's dynamic real estate market.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Market analysis & pricing strategy</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Property marketing & promotion</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Professional property valuation</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Legal & regulatory guidance</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Negotiation support</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Sell or Buy</a>
+          </div>
+        </div>
+
+        <!-- Service 4: Short Stay Management -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <div class="service-body">
+            <h3>Short Stay Management</h3>
+            <p>Professional management for vacation rentals and short-term stays. Maximize your rental income.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Guest booking management</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Cleaning & turnover coordination</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Guest communication & support</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Pricing optimization</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Multi-platform listing management</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Service 5: Real Estate Consultation -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="service-body">
+            <h3>Real Estate Consultation</h3>
+            <p>Expert advice for navigating Kigali's dynamic property market with confidence.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Investment property evaluation</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Portfolio management advice</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Market trend analysis</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Risk assessment & mitigation</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Strategic planning</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Schedule Now</a>
+          </div>
+        </div>
+
+        <!-- Service 6: Legal & Documentation -->
+        <div class="service-card fade-in">
+          <div class="icon-wrapper">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <div class="service-body">
+            <h3>Legal & Documentation</h3>
+            <p>Professional legal support for all your real estate transactions and documentation needs.</p>
+            <div class="service-features">
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Lease agreement preparation</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Property title verification</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Contract review & negotiation</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Dispute resolution support</div>
+              <div class="service-feature"><i class="fas fa-check-circle"></i> Compliance guidance</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Get Help</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROPERTY MANAGEMENT SECTION ===== -->
+  <section class="management-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge">Full-Service Management</div>
+        <h2>Professional <span>Property</span> Management</h2>
+        <p>Let us handle the complexities of property management while you enjoy the returns</p>
+      </div>
+
+      <div class="management-grid">
+        <div class="management-image fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+            alt="Property Management">
+          <div class="floating-badge">
+            <div class="number">100+</div>
+            <div class="label">Properties Managed</div>
+          </div>
+        </div>
+        <div class="management-content fade-in">
+          <h2>We Manage Your <span>Property</span> Like Our Own</h2>
+          <p>Our professional property management services ensure your investment is well-maintained, tenants are happy,
+            and your returns are maximized.</p>
+
+          <ul class="management-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Tenant Management:</strong> We handle tenant screening,
+              placement, and ongoing communication</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Maintenance & Repairs:</strong> 24/7 coordination for all
+              property maintenance needs</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Financial Management:</strong> Transparent rent collection,
+              accounting, and monthly reporting</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Legal Compliance:</strong> Ensure your property meets all
+              regulatory requirements</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Owner Communication:</strong> Regular updates and full
+              transparency</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">Get Property Management <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <div class="number" data-count="100">100+</div>
+          <div class="label">Properties Managed</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="number" data-count="500">500+</div>
+          <div class="label">Happy Tenants</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="number" data-count="50">50+</div>
+          <div class="label">Properties Sold</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="number" data-count="98">98%</div>
+          <div class="label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS SECTION ===== -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge">How It Works</div>
+        <h2>Simple <span>4-Step</span> Process</h2>
+        <p>Our streamlined process makes it easy to get started with any of our services</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step fade-in">
+          <div class="step-number">1</div>
+          <h4>Initial Consultation</h4>
+          <p>We understand your needs through a detailed consultation, whether you're a landlord, tenant, buyer, or
+            seller.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-number">2</div>
+          <h4>Customized Solution</h4>
+          <p>Our team creates a tailored plan that matches your specific requirements and goals.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-number">3</div>
+          <h4>Execution & Implementation</h4>
+          <p>We handle all the work - from marketing and matching to paperwork and coordination.</p>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-number">4</div>
+          <h4>Ongoing Support</h4>
+          <p>Our relationship continues with dedicated support and regular communication throughout your journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="sub-badge"><i class="fas fa-quote-left"></i> Testimonials</div>
+        <h2>What Our <span>Clients</span> Say</h2>
+        <p>Real stories from real people who have used our services</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 - Tenant -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"Ibakwe Stay transformed my rental experience. Their team found me a perfect apartment in
+            Kacyiru within days. The service was exceptional and the support ongoing."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Claire Uwimana">
+            <div>
+              <div class="name">Marie Claire Uwimana</div>
+              <div class="role"><i class="fas fa-user"></i> Tenant, Kacyiru</div>
+              <span class="tag tag-tenant">Tenant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 - Landlord -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"As a property owner, their management service has given me peace of mind. They handle
+            everything professionally and my rental income has increased by 30%."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Jean Pierre Mugabo">
+            <div>
+              <div class="name">Jean Pierre Mugabo</div>
+              <div class="role"><i class="fas fa-user"></i> Landlord, Gikondo</div>
+              <span class="tag tag-landlord">Landlord</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 - Seller -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"Their market insights helped me get the best price for my property in Nyarutarama. The
+            consultation service was worth every franc and the sale was smooth."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Eric Niyonsenga">
+            <div>
+              <div class="name">Eric Niyonsenga</div>
+              <div class="role"><i class="fas fa-user"></i> Seller, Nyarutarama</div>
+              <span class="tag tag-seller">Seller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 - Guest -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"The short-stay villa we booked through Ibakwe Stay was absolutely stunning. The booking
+            was seamless and the customer service was excellent."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Aisha Uwimana">
+            <div>
+              <div class="name">Aisha Uwimana</div>
+              <div class="role"><i class="fas fa-user"></i> Guest, Kacyiru</div>
+              <span class="tag tag-guest">Guest</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 - Buyer -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"I bought my first home through Ibakwe Stay and the experience was incredible. They guided
+            me through every step and made the process stress-free."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="Claudine Uwase">
+            <div>
+              <div class="name">Claudine Uwase</div>
+              <div class="role"><i class="fas fa-user"></i> Buyer, Kiyovu</div>
+              <span class="tag tag-seller">Buyer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 - Landlord -->
+        <div class="testimonial-card fade-in">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="quote">"I've been using Ibakwe Stay for 3 years now. Their property management service is
+            top-notch. They handle everything and my tenants are always happy."</div>
+          <div class="author">
+            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Olivier Habimana">
+            <div>
+              <div class="name">Olivier Habimana</div>
+              <div class="role"><i class="fas fa-user"></i> Landlord, Kimihurura</div>
+              <span class="tag tag-landlord">Landlord</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content fade-in">
+        <h2>Ready to <span>Get Started</span>?</h2>
+        <p>Whether you're looking to rent, buy, sell, or manage your property, our team is here to help.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us Now <i class="fas fa-arrow-right"></i></a>
+        <a href="apartment.html" class="btn btn-outline">Browse Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Ibakwe Stay</h3>
+          <p>Rwanda's premier real estate platform, connecting buyers, renters, and investors with the best properties
+            across Kigali.</p>
+          <div class="social-media">
+            <a href="https://www.facebook.com/RwandaHome-1915619678653717/" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/African_Prop" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/your_instagram_link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+250780035482" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="apartment.html">Apartments</a></li>
+            <li><a href="For rent.html">For Rent</a></li>
+            <li><a href="For sale.html">For Sale</a></li>
+            <li><a href="Short-stay.html">Short Stay</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> KN 4 Ave, Kigali, Rwanda</p>
+            <p><i class="fas fa-phone-alt"></i> +250 780 035 482</p>
+            <p><i class="fas fa-envelope"></i> info@ibakwe.rw</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</p>
+            <p><i class="fas fa-clock"></i> Sat: 9AM - 2PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ibakwe Stay. All rights reserved. Proudly Rwandan. <i class="fas fa-heart"
+            style="color: var(--secondary);"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // ===== Mobile Menu =====
+      $('.mobile-menu-btn').click(function () {
+        $('.nav-links').toggleClass('active');
+        $(this).find('i').toggleClass('fa-times');
+      });
+
+      // Close mobile menu on link click
+      $('.nav-links a').click(function () {
+        $('.nav-links').removeClass('active');
+        $('.mobile-menu-btn i').removeClass('fa-times');
+      });
+
+      // ===== Dropdown Menu =====
+      $('.dropdown-btn').click(function (e) {
+        if ($(window).width() <= 768) {
+          e.preventDefault();
+          $(this).siblings('.dropdown-menu').toggleClass('active');
+          $(this).find('i').toggleClass('fa-chevron-up');
+        }
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('.dropdown') && $(window).width() <= 768) {
+          $('.dropdown-menu').removeClass('active');
+          $('.dropdown-btn i').removeClass('fa-chevron-up');
+        }
+      });
+
+      // ===== Sticky Header =====
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 80) {
+          $('#header').addClass('scrolled');
+        } else {
+          $('#header').removeClass('scrolled');
+        }
+      });
+
+      // ===== Back to Top =====
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.back-to-top').addClass('active');
+        } else {
+          $('.back-to-top').removeClass('active');
+        }
+      });
+
+      $('.back-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+      });
+
+      // ===== Fade In Animation on Scroll =====
+      function checkFadeIn() {
+        $('.fade-in').each(function () {
+          var elementTop = $(this).offset().top;
+          var scrollBottom = $(window).scrollTop() + $(window).height();
+
+          if (scrollBottom > elementTop + 50) {
+            $(this).addClass('visible');
+          }
+        });
+      }
+
+      $(window).on('scroll', function () {
+        checkFadeIn();
+      });
+
+      // Initial check for elements in view
+      checkFadeIn();
+
+      // ===== Stats Counter Animation =====
+      function animateStats() {
+        $('.stats-grid .stat-item .number').each(function () {
+          var $this = $(this);
+          var text = $this.text().trim();
+          var hasPlus = text.includes('+');
+          var hasPercent = text.includes('%');
+          var target = parseInt(text.replace(/[+,%]/g, ''));
+          var count = 0;
+          var duration = 2000;
+          var increment = target / (duration / 16);
+
+          $this.text('0' + (hasPlus ? '+' : '') + (hasPercent ? '%' : ''));
+
+          var timer = setInterval(function () {
+            count += increment;
+            if (count >= target) {
+              count = target;
+              clearInterval(timer);
+            }
+            var display = Math.floor(count);
+            $this.text(display + (hasPlus ? '+' : '') + (hasPercent ? '%' : ''));
+          }, 16);
+        });
+      }
+
+      // Trigger stats animation when section is visible
+      var statsSection = document.querySelector('.stats-section');
+      var statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
+
+      // ===== Smooth Scroll for Anchor Links =====
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        if (target === '#') return;
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 80
+        }, 500);
+      });
+    });
+  </script>
+</body>
+
+</html>
