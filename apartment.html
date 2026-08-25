@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Premium Apartments | Ibakwe Stay</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="logoo.PNG" type="image/png">
+  <style>
+    :root {
+      --primary: #2D5D7C;
+      --primary-light: #3A7CA5;
+      --secondary: #F9A825;
+      --accent: #E63946;
+      --dark: #1A1A2E;
+      --light: #F8F9FA;
+      --gray: #6C757D;
+      --gray-light: #E9ECEF;
+      --transition: all 0.3s ease;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+      --green: #2E8B57;
+      --office: #7C3AED;
+      --hostel: #EC4899;
+      --shared: #F59E0B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 15px rgba(249, 168, 37, 0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(249, 168, 37, 0.4);
+    }
+
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 15px 0;
+    }
+
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Navigation */
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--dark);
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .nav-links .active::after {
+      width: 100%;
+    }
+
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-btn i {
+      margin-left: 5px;
+      font-size: 0.8rem;
+      transition: var(--transition);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      width: 200px;
+      box-shadow: var(--shadow-lg);
+      border-radius: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      padding: 10px 0;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--gray);
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary);
+      background-color: var(--gray-light);
+    }
+
+    .nav-links li:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      top: 120%;
+    }
+
+    .nav-links li:hover .dropdown-btn i {
+      transform: rotate(180deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .apartment-hero {
+      height: 70vh;
+      min-height: 550px;
+      background: linear-gradient(135deg, rgba(45, 93, 124, 0.85), rgba(45, 93, 124, 0.7)),
+        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+      position: relative;
+      margin-bottom: 0;
+    }
+
+    .apartment-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, var(--light), transparent);
+      z-index: 1;
+    }
+
+    .apartment-hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .apartment-hero .badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 25px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary);
+      border: 1px solid rgba(249, 168, 37, 0.3);
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .apartment-hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+      text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .apartment-hero h1 span {
+      color: var(--secondary);
+    }
+
+    .apartment-hero p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .hero-stat .label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Filter Chips */
+    .filter-chips {
+      padding: 40px 0 20px;
+      background: var(--light);
+    }
+
+    .filter-chips .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .chip {
+      padding: 10px 25px;
+      border-radius: 30px;
+      background: white;
+      border: 2px solid var(--gray-light);
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--gray);
+    }
+
+    .chip:hover {
+      border-color: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .chip.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: white;
+    }
+
+    .chip i {
+      margin-right: 8px;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: white;
+      padding: 30px 0;
+      box-shadow: var(--shadow);
+      margin-top: -1px;
+    }
+
+    .stats-bar .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stats-bar .stat-item {
+      padding: 10px;
+    }
+
+    .stats-bar .stat-item .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stats-bar .stat-item .label {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* Apartment Features Section */
+    .apt-features {
+      background: var(--gray-light);
+      padding: 60px 0;
+    }
+
+    .apt-features .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .apt-feature-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 16px;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .apt-feature-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .apt-feature-item i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .apt-feature-item h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .apt-feature-item p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Properties Section */
+    .apartment-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header .sub-badge {
+      display: inline-block;
+      background: rgba(249, 168, 37, 0.1);
+      padding: 5px 20px;
+      border-radius: 20px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+      color: var(--primary);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-header h2 span {
+      color: var(--secondary);
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Properties Grid */
+    .apartment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 35px;
+      margin-top: 20px;
+    }
+
+    .apartment-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .apartment-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .apartment-card .badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--secondary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+
+    .apartment-card .badge.featured {
+      background: var(--accent);
+    }
+
+    .apartment-card .badge.new {
+      background: var(--green);
+    }
+
+    .apartment-card .badge.luxury {
+      background: #8B5CF6;
+    }
+
+    .apartment-card .badge.office {
+      background: var(--office);
+    }
+
+    .apartment-card .badge.hostel {
+      background: var(--hostel);
+    }
+
+    .apartment-card .badge.shared {
+      background: var(--shared);
+    }
+
+    /* RENTAL TYPE BADGE - NEW */
+    .apartment-card .rental-type {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 4px 14px;
+      border-radius: 15px;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .apartment-card .floor-badge {
+      position: absolute;
+      top: 110px;
+      right: 20px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 3px 12px;
+      border-radius: 12px;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 500;
+    }
+
+    .apartment-img {
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .apartment-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+    }
+
+    .apartment-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .apartment-card:hover .apartment-img img {
+      transform: scale(1.08);
+    }
+
+    .apartment-img .price-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .apartment-img .price-tag span {
+      font-weight: 400;
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .apartment-img .size-tag {
+      position: absolute;
+      bottom: 70px;
+      left: 20px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 3px 15px;
+      border-radius: 15px;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .apartment-content {
+      padding: 25px 25px 30px;
+    }
+
+    .apartment-content .property-type {
+      display: inline-block;
+      background: var(--gray-light);
+      padding: 3px 15px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .apartment-content h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      transition: var(--transition);
+    }
+
+    .apartment-card:hover .apartment-content h3 {
+      color: var(--secondary);
+    }
+
+    .apartment-location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .apartment-location i {
+      margin-right: 8px;
+      color: var(--secondary);
+      font-size: 0.8rem;
+    }
+
+    .apartment-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 15px 0 12px;
+      padding: 15px 0;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .feature i {
+      margin-right: 6px;
+      color: var(--secondary);
+      font-size: 0.9rem;
+    }
+
+    /* AMENITIES TAGS */
+    .apartment-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .amenity-tag {
+      background: var(--gray-light);
+      padding: 2px 12px;
+      border-radius: 12px;
+      font-size: 0.65rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .amenity-tag i {
+      margin-right: 4px;
+      color: var(--secondary);
+    }
+
+    .apartment-card .btn {
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      font-size: 0.95rem;
+    }
+
+    /* Quick Contact Section */
+    .quick-apartment {
+      background: var(--primary);
+      padding: 60px 0;
+      color: white;
+    }
+
+    .quick-apartment .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .quick-apartment-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .quick-apartment-content h2 span {
+      color: var(--secondary);
+    }
+
+    .quick-apartment-content p {
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .quick-apartment-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      color: var(--dark);
+    }
+
+    .quick-apartment-form .form-group {
+      margin-bottom: 0;
+    }
+
+    .quick-apartment-form .form-group.full {
+      grid-column: span 2;
+    }
+
+    .quick-apartment-form label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .quick-apartment-form input,
+    .quick-apartment-form select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid var(--gray-light);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .quick-apartment-form input:focus,
+    .quick-apartment-form select:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(249, 168, 37, 0.1);
+    }
+
+    .quick-apartment-form .btn {
+      grid-column: span 2;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0 20px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h3 {
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+
+    .footer-col p {
+      margin-bottom: 15px;
+      opacity: 0.8;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact i {
+      margin-right: 10px;
+      color: var(--secondary);
+      margin-top: 3px;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .social-media a:hover {
+      background-color: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .footer-bottom p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: 0 2px 15px rgba(249, 168, 37, 0.3);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      overflow-y: auto;
+      padding: 40px 20px;
+    }
+
+    .modal-content {
+      background-color: white;
+      max-width: 950px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-header {
+      padding: 20px 25px;
+      background-color: var(--primary);
+      color: white;
+      position: relative;
+    }
+
+    .modal-header h3 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .modal-header .modal-sub {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--secondary);
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .main-image {
+      grid-column: span 2;
+      height: 300px;
+    }
+
+    .modal-details h4 {
+      color: var(--primary);
+      margin: 20px 0 10px;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .modal-details h4::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    .detail-list {
+      margin-bottom: 15px;
+    }
+
+    .detail-item {
+      display: flex;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .detail-item i {
+      color: var(--secondary);
+      margin-right: 10px;
+      margin-top: 3px;
+      width: 18px;
+    }
+
+    .modal-form {
+      background-color: var(--gray-light);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .modal-form h4 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(45, 93, 124, 0.1);
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      background-color: #e69500;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(249, 168, 37, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .apartment-hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .main-image {
+        grid-column: span 3;
+      }
+
+      .quick-apartment .container {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-stats {
+        gap: 30px;
+      }
+
+      .apt-features .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 15px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background-color: var(--gray-light);
+      }
+
+      .nav-links li:hover .dropdown-menu {
+        top: 0;
+      }
+
+      .dropdown-menu.active {
+        display: block;
+      }
+
+      .apartment-hero {
+        height: 60vh;
+        min-height: 450px;
+      }
+
+      .apartment-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .apartment-hero .badge {
+        font-size: 0.7rem;
+        padding: 5px 15px;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+
+      .hero-stat .number {
+        font-size: 1.5rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .apartment-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .quick-apartment-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .quick-apartment-form .form-group.full {
+        grid-column: span 1;
+      }
+
+      .quick-apartment-form .btn {
+        grid-column: span 1;
+      }
+
+      .modal-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .main-image {
+        grid-column: span 2;
+      }
+
+      .apt-features .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo h1 {
+        font-size: 1.2rem;
+      }
+
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .apartment-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .apartment-hero p {
+        font-size: 1rem;
+      }
+
+      .stats-bar .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .stats-bar .stat-item .number {
+        font-size: 1.5rem;
+      }
+
+      .modal-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .main-image {
+        grid-column: span 1;
+      }
+
+      .social-media {
+        gap: 10px;
+      }
+
+      .social-media a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-chips .container {
+        gap: 8px;
+      }
+
+      .chip {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logoo.PNG" alt="Ibakwe Stay">
+        <h1>Ibakwe Stay</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about us.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn">Properties <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="apartment.html" class="active">Apartments</a></li>
+              <li><a href="For rent.html">For rent</a></li>
+              <li><a href="For sale.html">Sale</a></li>
+              <li><a href="Short-stay.html">Short Stay</a></li>
+            </ul>
+          </li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="apartment-hero">
+    <div class="apartment-hero-content">
+      <div class="badge"><i class="fas fa-building" style="margin-right: 8px;"></i> Premium Apartments</div>
+      <h1>Find Your Perfect <span>Apartment</span> Space</h1>
+      <p>Whether you need a full apartment, shared room, office space, or hostel-style accommodation - we have the
+        perfect solution for you.</p>
+      <a href="#properties" class="btn btn-primary">Explore Apartments <i class="fas fa-arrow-right"
+          style="margin-left: 10px;"></i></a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">60+</div>
+          <div class="label">Apartments Available</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">4.8 <i class="fas fa-star" style="color: var(--secondary);"></i></div>
+          <div class="label">Resident Rating</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">24/7</div>
+          <div class="label">Security & Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Chips -->
+  <section class="filter-chips">
+    <div class="container">
+      <button class="chip active" data-filter="all"><i class="fas fa-th-large"></i> All</button>
+      <button class="chip" data-filter="full"><i class="fas fa-building"></i> Full Apartment</button>
+      <button class="chip" data-filter="shared"><i class="fas fa-users"></i> Shared Room</button>
+      <button class="chip" data-filter="office"><i class="fas fa-briefcase"></i> Office Space</button>
+      <button class="chip" data-filter="hostel"><i class="fas fa-bed"></i> Hostel/Stay</button>
+      <button class="chip" data-filter="luxury"><i class="fas fa-crown"></i> Luxury</button>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stat-item">
+        <div class="number">RWF 850K</div>
+        <div class="label">Avg. Monthly Rent</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">10+</div>
+        <div class="label">Kigali Sectors</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">98%</div>
+        <div class="label">Tenant Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="number"><i class="fas fa-shield-alt" style="color: var(--secondary);"></i> 24/7</div>
+        <div class="label">Security</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apartment Features -->
+  <section class="apt-features">
+    <div class="container">
+      <div class="apt-feature-item">
+        <i class="fas fa-elevator"></i>
+        <h4>Elevator Access</h4>
+        <p>Modern elevator access to all floors</p>
+      </div>
+      <div class="apt-feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <h4>24/7 Security</h4>
+        <p>Professional security with CCTV</p>
+      </div>
+      <div class="apt-feature-item">
+        <i class="fas fa-wifi"></i>
+        <h4>High-Speed Internet</h4>
+        <p>Fiber optic internet ready</p>
+      </div>
+      <div class="apt-feature-item">
+        <i class="fas fa-dumbbell"></i>
+        <h4>Fitness Center</h4>
+        <p>On-site gym facilities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Section -->
+  <section class="apartment-section" id="properties">
+    <div class="container">
+      <div class="section-header">
+        <div class="sub-badge"><i class="fas fa-star" style="margin-right: 6px;"></i> Featured Apartments</div>
+        <h2>Flexible <span>Rental</span> Options</h2>
+        <p>Choose from Full Apartments, Shared Rooms, Office Spaces, or Hostel-Style accommodations</p>
+      </div>
+
+      <div class="apartment-grid" id="propertyGrid">
+        <!-- Apartment 1 - FULL APARTMENT (Luxury) -->
+        <div class="apartment-card" data-category="full luxury">
+          <div class="badge featured"><i class="fas fa-star"></i> Featured</div>
+          <div class="rental-type"><i class="fas fa-building"></i> Full Apartment</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 8</div>
+          <div class="apartment-img">
+            <img
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Luxury Apartment">
+            <div class="price-tag">RWF 1,200,000 <span>/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 180 m²</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-building"></i> Luxury Apartment</span>
+            <h3>Nyarutarama Luxury Residence</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Nyarutarama, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> 2.5 Baths</div>
+              <div class="feature"><i class="fas fa-elevator"></i> Elevator</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> 24/7 Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+              <span class="amenity-tag"><i class="fas fa-tv"></i> Smart TV</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal1')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 2 - SHARED ROOM -->
+        <div class="apartment-card" data-category="shared">
+          <div class="badge shared"><i class="fas fa-users"></i> Shared</div>
+          <div class="rental-type"><i class="fas fa-users"></i> Shared Room</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 4</div>
+          <div class="apartment-img">
+            <img
+              src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Shared Apartment">
+            <div class="price-tag">RWF 350,000 <span>/room/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 30 m² / room</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-users"></i> Shared Room</span>
+            <h3>Kiyovu Shared Flat</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kiyovu, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 1-2 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> Shared Bath</div>
+              <div class="feature"><i class="fas fa-elevator"></i> Elevator</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-tree"></i> Garden</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal2')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 3 - OFFICE SPACE -->
+        <div class="apartment-card" data-category="office">
+          <div class="badge office"><i class="fas fa-briefcase"></i> Office</div>
+          <div class="rental-type"><i class="fas fa-briefcase"></i> Office Space</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 12</div>
+          <div class="apartment-img">
+            <img src="ser111.png" alt="Office Space">
+            <div class="price-tag">RWF 1,800,000 <span>/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 250 m²</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-briefcase"></i> Office Suite</span>
+            <h3>Kacyiru Executive Office</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kacyiru, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-users"></i> 10+ Staff</div>
+              <div class="feature"><i class="fas fa-bath"></i> 3 Baths</div>
+              <div class="feature"><i class="fas fa-elevator"></i> Elevator</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> 24/7 Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+              <span class="amenity-tag"><i class="fas fa-print"></i> Printer</span>
+              <span class="amenity-tag"><i class="fas fa-tv"></i> Conference Room</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal3')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 4 - HOSTEL/STAY -->
+        <div class="apartment-card" data-category="hostel">
+          <div class="badge hostel"><i class="fas fa-bed"></i> Hostel</div>
+          <div class="rental-type"><i class="fas fa-bed"></i> Hostel / Stay</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 2</div>
+          <div class="apartment-img">
+            <img
+              src="https://images.unsplash.com/photo-1560448205-97abe7378152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Hostel Stay">
+            <div class="price-tag">RWF 150,000 <span>/bed/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 120 m²</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-bed"></i> Hostel Stay</span>
+            <h3>Gikondo Cozy Hostel</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Gikondo, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 6 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> Security</div>
+              <div class="feature"><i class="fas fa-utensils"></i> Kitchen</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-tv"></i> TV</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Shared Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-water"></i> Water</span>
+              <span class="amenity-tag"><i class="fas fa-bolt"></i> Electricity</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal4')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 5 - FULL APARTMENT (Penthouse) -->
+        <div class="apartment-card" data-category="full luxury">
+          <div class="badge luxury"><i class="fas fa-crown"></i> Penthouse</div>
+          <div class="rental-type"><i class="fas fa-building"></i> Full Apartment</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 20</div>
+          <div class="apartment-img">
+            <img
+              src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Penthouse">
+            <div class="price-tag">RWF 1,100,000 <span>/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 150 m²</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-city"></i> Sky Penthouse</span>
+            <h3>Kicukiro Sky Penthouse</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kicukiro, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 2 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> 2.5 Baths</div>
+              <div class="feature"><i class="fas fa-elevator"></i> Elevator</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> 24/7 Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
+              <span class="amenity-tag"><i class="fas fa-umbrella-beach"></i> Rooftop</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal5')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 6 - SHARED ROOM (Family) -->
+        <div class="apartment-card" data-category="shared">
+          <div class="badge new"><i class="fas fa-clock"></i> New</div>
+          <div class="rental-type"><i class="fas fa-users"></i> Shared Room</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 6</div>
+          <div class="apartment-img">
+            <img src="serrr2.png" alt="Shared Apartment">
+            <div class="price-tag">RWF 400,000 <span>/room/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 40 m² / room</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-users"></i> Shared Room</span>
+            <h3>Remera Shared Apartment</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Remera, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 1-2 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> Shared Bath</div>
+              <div class="feature"><i class="fas fa-elevator"></i> Elevator</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-tree"></i> Garden</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+              <span class="amenity-tag"><i class="fas fa-child"></i> Playground</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal6')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Apartment 7 - STUDIO (Full) -->
+        <div class="apartment-card" data-category="full">
+          <div class="rental-type"><i class="fas fa-building"></i> Full Apartment</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> Floor 3</div>
+          <div class="apartment-img">
+            <img src="apartment8.png" alt="Studio Apartment">
+            <div class="price-tag">RWF 550,000 <span>/month</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 70 m²</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-home"></i> Studio Apartment</span>
+            <h3>Gisozi Modern Studio</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Gisozi, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 1 Bed</div>
+              <div class="feature"><i class="fas fa-bath"></i> 1 Bath</div>
+              <div class="feature"><i class="fas fa-shield-alt"></i> Security</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchenette</span>
+              <span class="amenity-tag"><i class="fas fa-tv"></i> TV</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('modal7')">View Details <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Contact -->
+  <section class="quick-apartment">
+    <div class="container">
+      <div class="quick-apartment-content">
+        <div class="sub-badge"
+          style="display:inline-block; background:rgba(249,168,37,0.2); padding:5px 20px; border-radius:20px; color:var(--secondary); font-size:0.8rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:15px;">
+          <i class="fas fa-key" style="margin-right: 6px;"></i> Find Your Space
+        </div>
+        <h2>Looking for the <span>Right</span> Space?</h2>
+        <p>Tell us what you need - full apartment, shared room, office space, or hostel stay. Our team will find the
+          perfect match.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <div><i class="fas fa-check-circle" style="color: var(--secondary);"></i> Free Viewing</div>
+          <div><i class="fas fa-check-circle" style="color: var(--secondary);"></i> No Hidden Fees</div>
+          <div><i class="fas fa-check-circle" style="color: var(--secondary);"></i> Fast Response</div>
+        </div>
+      </div>
+      <form class="quick-apartment-form" id="quickApartmentForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="Enter your phone" required>
+        </div>
+        <div class="form-group">
+          <label>Rental Type</label>
+          <select>
+            <option value="full">Full Apartment</option>
+            <option value="shared">Shared Room</option>
+            <option value="office">Office Space</option>
+            <option value="hostel">Hostel / Stay</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Budget Range (RWF/month)</label>
+          <select>
+            <option value="100-300K">100K - 300K</option>
+            <option value="300-600K">300K - 600K</option>
+            <option value="600K-1M">600K - 1M</option>
+            <option value="1M-2M">1M - 2M</option>
+            <option value="2M+">2M+</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+            Find My Space</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ MODALS ============ -->
+
+  <!-- MODAL 1 - Full Apartment (Luxury) -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Nyarutarama Luxury Residence</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Nyarutarama, Kigali | <i
+            class="fas fa-building" style="margin-right: 4px;"></i> Full Apartment</div>
+        <span class="modal-close" onclick="closeModal('modal1')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img
+            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Living Area" class="main-image">
+          <img
+            src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+            alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Apartment</h4>
+          <p>This luxurious 3-bedroom apartment in Nyarutarama offers premium living with high-end finishes, spacious
+            rooms, and stunning city views. The residence features an open-plan living area, modern kitchen, and a large
+            balcony perfect for entertaining.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-building"></i>
+              <div><strong>Rental Type:</strong> Full Apartment</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Bedrooms:</strong> 3 (Master ensuite)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 2.5</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 180 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 8th Floor (Elevator)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 2 Covered spaces</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 CCTV & Guard</div>
+            </div>
+          </div>
+
+          <h4>Included Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> Fiber Internet</span>
+            <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+            <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
+            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Pool</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Full Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Smart TV</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 1,200,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Landlord:</strong>
+              Mr. Jean Claude</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 123 456</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong> jean.claude@example.com
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <p style="font-size:0.9rem; color:var(--gray); margin-bottom:20px;">Fill out this form to schedule a viewing
+            or request more information.</p>
+          <form id="inquiryForm1" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-1">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name1" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email1" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone1" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein1"
+                class="form-control" name="movein" required></div>
+            <div class="form-group"><label>Your Message</label><textarea id="message1" class="form-control" name="message"
+                rows="4">I'm interested in renting this apartment and would like to schedule a viewing.</textarea></div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2 - Shared Room -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Kiyovu Shared Flat</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Kiyovu, Kigali | <i
+            class="fas fa-users" style="margin-right: 4px;"></i> Shared Room</div>
+        <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img
+            src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Living Area" class="main-image">
+          <img src="new modal.png" alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Shared Room</h4>
+          <p>This stylish shared flat in Kiyovu offers individual rooms in a modern, fully furnished apartment. Perfect
+            for students, young professionals, or anyone looking for affordable accommodation with community living.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-users"></i>
+              <div><strong>Rental Type:</strong> Shared Room</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Room Size:</strong> 30 m² (1-2 people)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> Shared (2 total)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 4th Floor (Elevator)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 1 Reserved space</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 Security</div>
+            </div>
+          </div>
+
+          <h4>Shared Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Shared Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Living Room</span>
+            <span class="amenity-tag"><i class="fas fa-tree"></i> Garden</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 350,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/room/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Landlord:</strong>
+              Mrs. Marie Uwase</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 234 567</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong> marie.uwase@example.com
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm2" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-2">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name2" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email2" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone2" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein2"
+                class="form-control" name="movein" required></div>
+            <div class="form-group"><label>Your Message</label><textarea id="message2" class="form-control" name="message"
+                rows="4">I'm interested in renting a room in this shared apartment and would like to schedule a viewing.</textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3 - Office Space -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Kacyiru Executive Office</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Kacyiru, Kigali | <i
+            class="fas fa-briefcase" style="margin-right: 4px;"></i> Office Space</div>
+        <span class="modal-close" onclick="closeModal('modal3')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="ser111.png" alt="Office Area" class="main-image">
+          <img src="new image house.png" alt="Meeting Room">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Office Space</h4>
+          <p>This premium executive office space in Kacyiru is perfect for businesses looking for a professional
+            environment. Features include modern workspaces, conference rooms, and 24/7 security.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-briefcase"></i>
+              <div><strong>Rental Type:</strong> Office Space</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-users"></i>
+              <div><strong>Capacity:</strong> 10+ staff</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 250 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 12th Floor (Elevator)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 4 Covered spaces</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 Professional</div>
+            </div>
+          </div>
+
+          <h4>Office Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> Fiber Internet</span>
+            <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+            <span class="amenity-tag"><i class="fas fa-print"></i> Printer</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Conference Room</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchenette</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 1,800,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Owner:</strong>
+              Mr. Eric Niyonsenga</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 456 789</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong>
+              eric.niyonsenga@example.com</p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm3" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-3">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name3" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email3" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone3" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Business Name</label><input type="text" id="business3" class="form-control"
+                placeholder="Your business name"></div>
+            <div class="form-group"><label>Your Message</label><textarea id="message3" class="form-control" name="message"
+                rows="4">I'm interested in renting this office space and would like to schedule a viewing.</textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4 - Hostel Stay -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Gikondo Cozy Hostel</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Gikondo, Kigali | <i
+            class="fas fa-bed" style="margin-right: 4px;"></i> Hostel / Stay</div>
+        <span class="modal-close" onclick="closeModal('modal4')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img
+            src="https://images.unsplash.com/photo-1560448205-97abe7378152?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Common Area" class="main-image">
+          <img src="new modal2.png" alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Hostel</h4>
+          <p>This cozy hostel in Gikondo offers comfortable accommodation for travelers, students, and short-term
+            visitors. Fully furnished with shared common areas, kitchen, and laundry facilities.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Rental Type:</strong> Hostel / Stay</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Beds:</strong> 6 beds (dorm-style)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 2 Shared</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 120 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 2nd Floor</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 Security</div>
+            </div>
+          </div>
+
+          <h4>Included Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Shared Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> TV</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water</span>
+            <span class="amenity-tag"><i class="fas fa-bolt"></i> Electricity</span>
+            <span class="amenity-tag"><i class="fas fa-washing-machine"></i> Laundry</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 150,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/bed/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Host:</strong>
+              Mrs. Aisha Uwimana</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 567 890</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong>
+              aisha.uwimana@example.com</p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm4" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-4">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name4" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email4" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone4" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Check-in Date</label><input type="date" id="checkin4" class="form-control"
+                required></div>
+            <div class="form-group"><label>Length of Stay</label>
+              <select class="form-control">
+                <option value="1week">1 Week</option>
+                <option value="2weeks">2 Weeks</option>
+                <option value="1month">1 Month</option>
+                <option value="3months">3 Months</option>
+                <option value="6months">6 Months+</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message</label><textarea id="message4" class="form-control" name="message"
+                rows="4">I'm interested in staying at this hostel and would like to check availability.</textarea></div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5 - Penthouse -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Kicukiro Sky Penthouse</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Kicukiro, Kigali | <i
+            class="fas fa-building" style="margin-right: 4px;"></i> Full Apartment</div>
+        <span class="modal-close" onclick="closeModal('modal5')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img
+            src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Living Area" class="main-image">
+          <img src="new modl 3.png" alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Penthouse</h4>
+          <p>Luxurious penthouse in Kicukiro with stunning city views. This 2-bedroom apartment features high-end
+            finishes, a spacious terrace, and premium amenities.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-building"></i>
+              <div><strong>Rental Type:</strong> Full Apartment</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Bedrooms:</strong> 2 (Both ensuite)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 2.5</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 150 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 20th Floor (Elevator)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 2 Covered spaces</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 Professional</div>
+            </div>
+          </div>
+
+          <h4>Included Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> Fiber Internet</span>
+            <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+            <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
+            <span class="amenity-tag"><i class="fas fa-umbrella-beach"></i> Rooftop</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Full Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Smart TV</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 1,100,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Landlord:</strong>
+              Mr. David Nkurunziza</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 678 901</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong>
+              david.nkurunziza@example.com</p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm5" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-5">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name5" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email5" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone5" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein5"
+                class="form-control" name="movein" required></div>
+            <div class="form-group"><label>Your Message</label><textarea id="message5" class="form-control" name="message"
+                rows="4">I'm interested in renting this penthouse and would like to schedule a viewing.</textarea></div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6 - Shared Room (Family) -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Remera Shared Apartment</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Remera, Kigali | <i
+            class="fas fa-users" style="margin-right: 4px;"></i> Shared Room</div>
+        <span class="modal-close" onclick="closeModal('modal6')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="serrr2.png" alt="Living Area" class="main-image">
+          <img src="new modl 3.png" alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Shared Room</h4>
+          <p>Spacious shared apartment in Remera with individual rooms available. Perfect for families or groups looking
+            for comfortable accommodation with community living.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-users"></i>
+              <div><strong>Rental Type:</strong> Shared Room</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Room Size:</strong> 40 m² (1-3 people)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> Shared (3 total)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 6th Floor (Elevator)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 2 spaces</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> 24/7 Security</div>
+            </div>
+          </div>
+
+          <h4>Shared Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Full Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Living Room</span>
+            <span class="amenity-tag"><i class="fas fa-tree"></i> Garden</span>
+            <span class="amenity-tag"><i class="fas fa-child"></i> Playground</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 400,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/room/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Landlord:</strong>
+              Mr. & Mrs. Nkusi</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 345 678</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong> nkusi.family@example.com
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm6" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-6">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name6" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email6" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone6" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein6"
+                class="form-control" name="movein" required></div>
+            <div class="form-group"><label>Number of People</label>
+              <select class="form-control">
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4+ People</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message</label><textarea id="message6" class="form-control" name="message"
+                rows="4">I'm interested in renting a room in this shared apartment and would like to schedule a viewing.</textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 7 - Studio -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Gisozi Modern Studio</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Gisozi, Kigali | <i
+            class="fas fa-building" style="margin-right: 4px;"></i> Full Apartment</div>
+        <span class="modal-close" onclick="closeModal('modal7')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="apartment8.png" alt="Studio" class="main-image">
+          <img src="new modl 3.png" alt="Bedroom">
+          <img
+            src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Kitchen">
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Bathroom">
+        </div>
+        <div class="modal-details">
+          <h4>About This Studio</h4>
+          <p>Modern and efficient studio apartment in Gisozi with smart design features. Includes a kitchenette,
+            sleeping area, and compact bathroom. Perfect for students or young professionals.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-building"></i>
+              <div><strong>Rental Type:</strong> Full Apartment</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Bedrooms:</strong> Studio (1 sleeping area)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 1</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 70 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-arrow-up"></i>
+              <div><strong>Floor:</strong> 3rd Floor</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> Building Security</div>
+            </div>
+          </div>
+
+          <h4>Included Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchenette</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> TV</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 550,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/month</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Landlord:</strong>
+              Mrs. Grace Uwimana</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              +250 788 789 012</p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong>
+              grace.uwimana@example.com</p>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <form id="inquiryForm7" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="New Property Inquiry from Ibakwe Stay">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-7">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name7" class="form-control" name="name" required>
+            </div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email7" class="form-control" name="email"
+                required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone7" class="form-control" name="phone"
+                required></div>
+            <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein7"
+                class="form-control" name="movein" required></div>
+            <div class="form-group"><label>Your Message</label><textarea id="message7" class="form-control" name="message"
+                rows="4">I'm interested in renting this studio and would like to schedule a viewing.</textarea></div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>About Us</h3>
+          <p>Ibakwe Stay - Kigali's premier apartment rental platform, connecting residents with quality homes since
+            2015. Committed to excellence and community values.</p>
+          <div class="social-media">
+            <a href="https://www.facebook.com/RwandaHome-1915619678653717/" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/African_Prop" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/your_instagram_link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+250780035482" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="apartment.html">Apartments</a></li>
+            <li><a href="For rent.html">Rentals</a></li>
+            <li><a href="For sale.html">Properties for Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> KN 4 Ave, Kigali, Rwanda</p>
+            <p><i class="fas fa-phone-alt"></i> +250 780 035 482</p>
+            <p><i class="fas fa-envelope"></i> apartments@ibakwe.rw</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ibakwe Stay. All rights reserved. Proudly Rwandan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Mobile Menu
+      $('.mobile-menu-btn').click(function () {
+        $('.nav-links').toggleClass('active');
+        $(this).find('i').toggleClass('fa-times');
+      });
+
+      // Dropdown
+      $('.dropdown-btn').click(function (e) {
+        e.preventDefault();
+        $(this).siblings('.dropdown-menu').toggleClass('active');
+        $(this).find('i').toggleClass('fa-chevron-up');
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('.dropdown').length) {
+          $('.dropdown-menu').removeClass('active');
+          $('.dropdown-btn i').removeClass('fa-chevron-up');
+        }
+      });
+
+      // Sticky Header
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('#header').addClass('scrolled');
+        } else {
+          $('#header').removeClass('scrolled');
+        }
+      });
+
+      // Back to Top
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.back-to-top').addClass('active');
+        } else {
+          $('.back-to-top').removeClass('active');
+        }
+      });
+
+      $('.back-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 'smooth');
+        return false;
+      });
+
+      // Filter Chips
+      $('.chip').click(function () {
+        $('.chip').removeClass('active');
+        $(this).addClass('active');
+
+        var filter = $(this).data('filter');
+
+        if (filter === 'all') {
+          $('.apartment-card').show();
+        } else {
+          $('.apartment-card').each(function () {
+            var categories = $(this).data('category');
+            if (categories && categories.includes(filter)) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        }
+      });
+
+      // Modal Functions - FIXED
+      window.openModal = function (modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      window.closeModal = function (modalId) {
+        var modal = document.getElementById(modalId);
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        if (event.target.className === 'modal') {
+          event.target.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+
+      // ==== Formspree Form Handler ====
+      $('form[id^="inquiryForm"]').on('submit', function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var submitBtn = form.find('.submit-btn');
+        var originalText = submitBtn.html();
+        var formData = new FormData(this);
+        submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...').prop('disabled', true);
+        form.find('.form-success-msg').remove();
+        form.find('.form-error-msg').remove();
+        $.ajax({
+          type: 'POST',
+          url: 'https://formspree.io/f/xqpkzzqd',
+          data: formData,
+          processData: false,
+          contentType: false,
+          dataType: 'json',
+          success: function(response) {
+            if (response.ok) {
+              var successHtml = '<div class="form-success-msg" style="background:#2E8B57; color:white; padding:15px; border-radius:8px; margin-top:15px; text-align:center;"><i class="fas fa-check-circle" style="font-size:1.5rem; display:block; margin-bottom:5px;"></i><strong>Thank you!</strong> Your inquiry has been sent successfully. We will contact you within 24 hours.</div>';
+              form.append(successHtml);
+              form[0].reset();
+              setTimeout(function() {
+                var modalId = form.closest('.modal').attr('id');
+                if (modalId) { document.getElementById(modalId).style.display = 'none'; document.body.style.overflow = 'auto'; }
+              }, 3000);
+            } else {
+              var errorHtml = '<div class="form-error-msg" style="background:#E63946; color:white; padding:15px; border-radius:8px; margin-top:15px; text-align:center;"><i class="fas fa-exclamation-circle" style="font-size:1.5rem; display:block; margin-bottom:5px;"></i><strong>Error!</strong> Something went wrong. Please try again or contact us via WhatsApp.</div>';
+              form.append(errorHtml);
+            }
+            submitBtn.html(originalText).prop('disabled', false);
+          },
+          error: function() {
+            var errorHtml = '<div class="form-error-msg" style="background:#E63946; color:white; padding:15px; border-radius:8px; margin-top:15px; text-align:center;"><i class="fas fa-exclamation-circle" style="font-size:1.5rem; display:block; margin-bottom:5px;"></i><strong>Error!</strong> Could not send your message. Please try again or contact us via WhatsApp.</div>';
+            form.append(errorHtml);
+            submitBtn.html(originalText).prop('disabled', false);
+          }
+        });
+      });
+
+      // Quick Apartment Form
+      $('#quickApartmentForm').submit(function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var btn = form.find('button[type="submit"]');
+        var orig = btn.html();
+        btn.html('<i class="fas fa-spinner fa-spin"></i> Sending...').prop('disabled', true);
+        $.ajax({ type: 'POST', url: 'https://formspree.io/f/xqpkzzqd', data: new FormData(this), processData: false, contentType: false, dataType: 'json',
+          success: function(r) {
+            if (r.ok) { alert('Thank you for your interest! Our apartment team will contact you within 2 hours.'); form[0].reset(); }
+            else { alert('Error sending message. Please try again.'); }
+            btn.html(orig).prop('disabled', false);
+          },
+          error: function() { alert('Error sending message. Please try again.'); btn.html(orig).prop('disabled', false); }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
