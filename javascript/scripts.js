@@ -74,3 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+// Init smooth scroll
