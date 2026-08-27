@@ -560,7 +560,7 @@
       background: var(--shared);
     }
 
-    /* RENTAL TYPE BADGE - NEW */
+    /* RENTAL TYPE BADGE */
     .apartment-card .rental-type {
       position: absolute;
       top: 70px;
@@ -1479,6 +1479,31 @@
         <p>Choose from Full Apartments, Shared Rooms, Office Spaces, or Hostel-Style accommodations</p>
       </div>
 
+      <!-- Location Info Box for Remera Duplex -->
+      <div
+        style="background: var(--light); border-radius: 16px; padding: 25px; margin-bottom: 30px; border-left: 4px solid var(--secondary);">
+        <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-map-marker-alt"
+            style="color: var(--secondary);"></i> Featured Property: Remera Duplex</h4>
+        <p style="color: var(--gray); font-size: 0.95rem;">Conveniently located in <strong>Remera, Kigali</strong>, near
+          <strong>RIB Remera</strong> and <strong>Gasabo Police Station</strong>, close to the main road — offering easy
+          access to important areas of the city.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;">
+          <span
+            style="background: white; padding:4px 14px; border-radius:20px; font-size:0.75rem; color:var(--gray);"><i
+              class="fas fa-map-pin" style="color:var(--secondary);"></i> RIB Remera</span>
+          <span
+            style="background: white; padding:4px 14px; border-radius:20px; font-size:0.75rem; color:var(--gray);"><i
+              class="fas fa-map-pin" style="color:var(--secondary);"></i> Gasabo Police Station</span>
+          <span
+            style="background: white; padding:4px 14px; border-radius:20px; font-size:0.75rem; color:var(--gray);"><i
+              class="fas fa-map-pin" style="color:var(--secondary);"></i> Main Road</span>
+          <span
+            style="background: white; padding:4px 14px; border-radius:20px; font-size:0.75rem; color:var(--gray);"><i
+              class="fas fa-map-pin" style="color:var(--secondary);"></i> Godial Area</span>
+        </div>
+      </div>
+
       <div class="apartment-grid" id="propertyGrid">
         <!-- Apartment 1 - FULL APARTMENT (Luxury) -->
         <div class="apartment-card" data-category="full luxury">
@@ -1729,6 +1754,47 @@
                 class="fas fa-arrow-right"></i></button>
           </div>
         </div>
+
+        <!-- Apartment 8 - NEW REMERA DUPLEX (Full Apartment - 2 Units) -->
+        <div class="apartment-card" data-category="full">
+          <div class="badge featured"><i class="fas fa-star"></i> Featured</div>
+          <div class="rental-type"><i class="fas fa-building"></i> Full Apartment</div>
+          <div class="floor-badge"><i class="fas fa-arrow-up"></i> 2 Floors</div>
+          <div class="apartment-img">
+            <img
+              src="D:\ibakwe-stay-website\images\remera apartment Lower Unit\image remera apartment Lower Unit (1).jpeg"
+              alt="Remera Duplex Apartment">
+            <div class="price-tag">RWF 35,000 <span>/night</span></div>
+            <div class="size-tag"><i class="fas fa-vector-square"></i> 2 Units</div>
+          </div>
+          <div class="apartment-content">
+            <span class="property-type"><i class="fas fa-home"></i> Duplex Apartment</span>
+            <h3>Remera Duplex - Two Units</h3>
+            <div class="apartment-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Remera, Kigali</span>
+            </div>
+            <div class="apartment-features">
+              <div class="feature"><i class="fas fa-bed"></i> 4 Beds</div>
+              <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+              <div class="feature"><i class="fas fa-vector-square"></i> 250 m²</div>
+              <div class="feature"><i class="fas fa-wifi"></i> WiFi</div>
+            </div>
+            <div class="apartment-amenities">
+              <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+              <span class="amenity-tag"><i class="fas fa-parking"></i> Parking</span>
+              <span class="amenity-tag"><i class="fas fa-tree"></i> Garden</span>
+              <span class="amenity-tag"><i class="fas fa-tv"></i> TV</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <button class="btn btn-primary" onclick="openModal('modal8')">View Upper Unit <i
+                  class="fas fa-arrow-up"></i></button>
+              <button class="btn btn-primary" onclick="openModal('modal9')">View Lower Unit <i
+                  class="fas fa-arrow-down"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1882,15 +1948,17 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-1">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name1" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name1" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email1" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone1" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email1" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone1" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein1"
                 class="form-control" name="movein" required></div>
-            <div class="form-group"><label>Your Message</label><textarea id="message1" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message1" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting this apartment and would like to schedule a viewing.</textarea></div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
               Inquiry</button>
@@ -1980,15 +2048,17 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-2">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name2" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name2" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email2" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone2" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email2" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone2" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein2"
                 class="form-control" name="movein" required></div>
-            <div class="form-group"><label>Your Message</label><textarea id="message2" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message2" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting a room in this shared apartment and would like to schedule a viewing.</textarea>
             </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
@@ -2078,15 +2148,17 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-3">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name3" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name3" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email3" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone3" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email3" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone3" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Business Name</label><input type="text" id="business3" class="form-control"
                 placeholder="Your business name"></div>
-            <div class="form-group"><label>Your Message</label><textarea id="message3" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message3" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting this office space and would like to schedule a viewing.</textarea>
             </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
@@ -2178,12 +2250,13 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-4">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name4" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name4" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email4" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone4" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email4" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone4" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Check-in Date</label><input type="date" id="checkin4" class="form-control"
                 required></div>
             <div class="form-group"><label>Length of Stay</label>
@@ -2195,7 +2268,8 @@
                 <option value="6months">6 Months+</option>
               </select>
             </div>
-            <div class="form-group"><label>Your Message</label><textarea id="message4" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message4" class="form-control"
+                name="message"
                 rows="4">I'm interested in staying at this hostel and would like to check availability.</textarea></div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
               Inquiry</button>
@@ -2289,15 +2363,17 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-5">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name5" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name5" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email5" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone5" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email5" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone5" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein5"
                 class="form-control" name="movein" required></div>
-            <div class="form-group"><label>Your Message</label><textarea id="message5" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message5" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting this penthouse and would like to schedule a viewing.</textarea></div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
               Inquiry</button>
@@ -2386,12 +2462,13 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-6">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name6" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name6" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email6" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone6" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email6" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone6" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein6"
                 class="form-control" name="movein" required></div>
             <div class="form-group"><label>Number of People</label>
@@ -2402,7 +2479,8 @@
                 <option value="4">4+ People</option>
               </select>
             </div>
-            <div class="form-group"><label>Your Message</label><textarea id="message6" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message6" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting a room in this shared apartment and would like to schedule a viewing.</textarea>
             </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
@@ -2490,16 +2568,293 @@
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="property_type" value="apartment">
             <input type="hidden" name="property_id" value="apt-7">
-            <div class="form-group"><label>Full Name</label><input type="text" id="name7" class="form-control" name="name" required>
+            <div class="form-group"><label>Full Name</label><input type="text" id="name7" class="form-control"
+                name="name" required>
             </div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email7" class="form-control" name="email"
-                required></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone7" class="form-control" name="phone"
-                required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email7" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone7" class="form-control"
+                name="phone" required></div>
             <div class="form-group"><label>Preferred Move-in Date</label><input type="date" id="movein7"
                 class="form-control" name="movein" required></div>
-            <div class="form-group"><label>Your Message</label><textarea id="message7" class="form-control" name="message"
+            <div class="form-group"><label>Your Message</label><textarea id="message7" class="form-control"
+                name="message"
                 rows="4">I'm interested in renting this studio and would like to schedule a viewing.</textarea></div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 8 - Remera Duplex Upper Unit (With Balcony) -->
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Remera Duplex - Upper Unit</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Remera, Kigali | <i
+            class="fas fa-building" style="margin-right: 4px;"></i> Upper Unit with Balcony</div>
+        <span class="modal-close" onclick="closeModal('modal8')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="images/image remera apartment up top side/1 (1).jpeg"
+            alt="Upper Unit - Living Room with Balcony Access" class="main-image">
+          <img src="images/image remera apartment up top side/1 (2).jpeg"
+            alt="Upper Unit - Spacious Living Room with Sofas and TV">
+          <img src="images/image remera apartment up top side/1 (3).jpeg" alt="Upper Unit - Balcony with Garden Views">
+          <img src="images/image remera apartment up top side/1 (4).jpeg"
+            alt="Upper Unit - Modern Bedroom with Built-in Wardrobe">
+          <img src="images/image remera apartment up top side/1 (5).jpeg"
+            alt="Upper Unit - Fully Equipped Kitchen with Modern Appliances">
+          <img src="images/image remera apartment up top side/1 (6).jpeg" alt="Upper Unit - Additional View">
+        </div>
+        <div class="modal-details">
+          <h4>About This Upper Unit</h4>
+          <p>This spacious upper unit features a private balcony with beautiful garden views. The apartment includes a
+            generous living room with television and comfortable sofas, a modern stone-feature kitchen, multiple
+            bedrooms with built-in wardrobes, and a fully equipped bathroom.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-building"></i>
+              <div><strong>Unit:</strong> Upper Unit (2nd Floor)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Bedrooms:</strong> 2 (Built-in wardrobes)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 1 (Bathtub & Shower)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 120 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-umbrella-beach"></i>
+              <div><strong>Balcony:</strong> Private with Garden Views</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 1 Covered space</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> Secure Compound</div>
+            </div>
+          </div>
+
+          <h4>Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> Fiber Internet</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Full Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Smart TV</span>
+            <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+            <span class="amenity-tag"><i class="fas fa-tree"></i> Garden View</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 35,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/night (min 3 nights)</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Owner:</strong>
+              Aimable Kamugisha</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              <a href="tel:+250780737320">+250 780 737 320</a>
+            </p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong> <a
+                href="mailto:kamugishaaimaboy@gmail.com">kamugishaaimaboy@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Location:</strong> Remera, near RIB &
+              Gasabo Police Station</p>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:15px;">
+            <a href="https://wa.me/250788303588?text=Hi%2C%20I%20am%20interested%20in%20booking%20the%20Remera%20Duplex%20-%20UPPER%20UNIT%20%28with%20balcony%29.%20Please%20let%20me%20know%20availability%20for%20%3Cinsert%20dates%3E."
+              target="_blank" class="btn btn-primary"
+              style="background:#25D366; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <i class="fab fa-whatsapp"></i> Book via WhatsApp
+            </a>
+            <a href="tel:+250780737320" class="btn btn-primary"
+              style="background:#2D5D7C; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <p style="font-size:0.9rem; color:var(--gray); margin-bottom:20px;">Fill out this form to inquire about the
+            Upper Unit.</p>
+          <form id="inquiryForm8" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="Inquiry - Remera Duplex Upper Unit">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-8-upper">
+            <input type="hidden" name="property_name" value="Remera Duplex - Upper Unit">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name8" class="form-control"
+                name="name" required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email8" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone8" class="form-control"
+                name="phone" required></div>
+            <div class="form-group"><label>Check-in Date</label><input type="date" id="checkin8" class="form-control"
+                name="checkin" required></div>
+            <div class="form-group"><label>Check-out Date</label><input type="date" id="checkout8" class="form-control"
+                name="checkout" required></div>
+            <div class="form-group"><label>Number of Guests</label>
+              <select class="form-control" name="guests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6+ Guests</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message</label><textarea id="message8" class="form-control"
+                name="message"
+                rows="4">I'm interested in booking the Remera Duplex - Upper Unit. Please confirm availability.</textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
+              Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 9 - Remera Duplex Lower Unit (Ground Floor) -->
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Remera Duplex - Lower Unit</h3>
+        <div class="modal-sub"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Remera, Kigali | <i
+            class="fas fa-building" style="margin-right: 4px;"></i> Lower Unit with Garden Access</div>
+        <span class="modal-close" onclick="closeModal('modal9')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (1).jpeg"
+            alt="Lower Unit - Spacious Living Room" class="main-image">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (2).jpeg"
+            alt="Lower Unit - Modern Kitchen with Stone Feature">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (3).jpeg"
+            alt="Lower Unit - Garden and Outdoor Area">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (4).jpeg"
+            alt="Lower Unit - Bedroom with Built-in Wardrobe">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (5).jpeg"
+            alt="Lower Unit - Bathroom with Bathtub and Shower">
+          <img src="images/remera apartment Lower Unit/image remera apartment Lower Unit (6).jpeg"
+            alt="Lower Unit - Additional View">
+        </div>
+        <div class="modal-details">
+          <h4>About This Lower Unit</h4>
+          <p>This spacious lower unit features direct access to the garden and outdoor area. The apartment includes a
+            generous living room with television and comfortable sofas, a modern stone-feature kitchen, multiple
+            bedrooms with built-in wardrobes, and a fully equipped bathroom with bathtub and shower.</p>
+
+          <h4>What You Get</h4>
+          <div class="detail-list">
+            <div class="detail-item"><i class="fas fa-building"></i>
+              <div><strong>Unit:</strong> Lower Unit (Ground Floor)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bed"></i>
+              <div><strong>Bedrooms:</strong> 2 (Built-in wardrobes)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-bath"></i>
+              <div><strong>Bathrooms:</strong> 1 (Bathtub & Shower)</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-vector-square"></i>
+              <div><strong>Size:</strong> 130 m²</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-tree"></i>
+              <div><strong>Garden:</strong> Direct Access to Garden</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-car"></i>
+              <div><strong>Parking:</strong> 1 Covered space</div>
+            </div>
+            <div class="detail-item"><i class="fas fa-shield-alt"></i>
+              <div><strong>Security:</strong> Secure Compound</div>
+            </div>
+          </div>
+
+          <h4>Amenities</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
+            <span class="amenity-tag"><i class="fas fa-wifi"></i> Fiber Internet</span>
+            <span class="amenity-tag"><i class="fas fa-utensils"></i> Full Kitchen</span>
+            <span class="amenity-tag"><i class="fas fa-tv"></i> Smart TV</span>
+            <span class="amenity-tag"><i class="fas fa-snowflake"></i> AC</span>
+            <span class="amenity-tag"><i class="fas fa-tree"></i> Garden Access</span>
+            <span class="amenity-tag"><i class="fas fa-water"></i> Water Heater</span>
+            <span class="amenity-tag"><i class="fas fa-washing-machine"></i> Laundry Area</span>
+          </div>
+
+          <div style="font-size: 1.8rem; margin: 15px 0; color: var(--primary); font-weight: 700;">
+            RWF 35,000 <span style="font-size: 1rem; font-weight: 400; color: var(--gray);">/night (min 3 nights)</span>
+          </div>
+
+          <div style="background: var(--gray-light); padding: 15px; border-radius: 8px; margin-top: 10px;">
+            <p><i class="fas fa-user" style="color: var(--secondary); margin-right: 8px;"></i><strong>Owner:</strong>
+              Aimable Kamugisha</p>
+            <p><i class="fas fa-phone" style="color: var(--secondary); margin-right: 8px;"></i><strong>Phone:</strong>
+              <a href="tel:+250780737320">+250 780 737 320</a>
+            </p>
+            <p><i class="fas fa-envelope"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Email:</strong> <a
+                href="mailto:kamugishaaimaboy@gmail.com">kamugishaaimaboy@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"
+                style="color: var(--secondary); margin-right: 8px;"></i><strong>Location:</strong> Remera, near RIB &
+              Gasabo Police Station</p>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:15px;">
+            <a href="https://wa.me/250788303588?text=Hi%2C%20I%20am%20interested%20in%20booking%20the%20Remera%20Duplex%20-%20LOWER%20UNIT%20%28garden%20access%29.%20Please%20let%20me%20know%20availability%20for%20%3Cinsert%20dates%3E."
+              target="_blank" class="btn btn-primary"
+              style="background:#25D366; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <i class="fab fa-whatsapp"></i> Book via WhatsApp
+            </a>
+            <a href="tel:+250780737320" class="btn btn-primary"
+              style="background:#2D5D7C; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-form">
+          <h4>Inquiry Form</h4>
+          <p style="font-size:0.9rem; color:var(--gray); margin-bottom:20px;">Fill out this form to inquire about the
+            Lower Unit.</p>
+          <form id="inquiryForm9" action="https://formspree.io/f/xqpkzzqd" method="POST">
+            <input type="hidden" name="_subject" value="Inquiry - Remera Duplex Lower Unit">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="property_type" value="apartment">
+            <input type="hidden" name="property_id" value="apt-9-lower">
+            <input type="hidden" name="property_name" value="Remera Duplex - Lower Unit">
+            <div class="form-group"><label>Full Name</label><input type="text" id="name9" class="form-control"
+                name="name" required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email9" class="form-control"
+                name="email" required></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone9" class="form-control"
+                name="phone" required></div>
+            <div class="form-group"><label>Check-in Date</label><input type="date" id="checkin9" class="form-control"
+                name="checkin" required></div>
+            <div class="form-group"><label>Check-out Date</label><input type="date" id="checkout9" class="form-control"
+                name="checkout" required></div>
+            <div class="form-group"><label>Number of Guests</label>
+              <select class="form-control" name="guests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6+ Guests</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message</label><textarea id="message9" class="form-control"
+                name="message"
+                rows="4">I'm interested in booking the Remera Duplex - Lower Unit. Please confirm availability.</textarea>
+            </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send
               Inquiry</button>
           </form>
@@ -2649,7 +3004,7 @@
       }
 
       // ==== Formspree Form Handler ====
-      $('form[id^="inquiryForm"]').on('submit', function(e) {
+      $('form[id^="inquiryForm"]').on('submit', function (e) {
         e.preventDefault();
         var form = $(this);
         var submitBtn = form.find('.submit-btn');
@@ -2665,12 +3020,12 @@
           processData: false,
           contentType: false,
           dataType: 'json',
-          success: function(response) {
+          success: function (response) {
             if (response.ok) {
               var successHtml = '<div class="form-success-msg" style="background:#2E8B57; color:white; padding:15px; border-radius:8px; margin-top:15px; text-align:center;"><i class="fas fa-check-circle" style="font-size:1.5rem; display:block; margin-bottom:5px;"></i><strong>Thank you!</strong> Your inquiry has been sent successfully. We will contact you within 24 hours.</div>';
               form.append(successHtml);
               form[0].reset();
-              setTimeout(function() {
+              setTimeout(function () {
                 var modalId = form.closest('.modal').attr('id');
                 if (modalId) { document.getElementById(modalId).style.display = 'none'; document.body.style.overflow = 'auto'; }
               }, 3000);
@@ -2680,7 +3035,7 @@
             }
             submitBtn.html(originalText).prop('disabled', false);
           },
-          error: function() {
+          error: function () {
             var errorHtml = '<div class="form-error-msg" style="background:#E63946; color:white; padding:15px; border-radius:8px; margin-top:15px; text-align:center;"><i class="fas fa-exclamation-circle" style="font-size:1.5rem; display:block; margin-bottom:5px;"></i><strong>Error!</strong> Could not send your message. Please try again or contact us via WhatsApp.</div>';
             form.append(errorHtml);
             submitBtn.html(originalText).prop('disabled', false);
@@ -2689,19 +3044,20 @@
       });
 
       // Quick Apartment Form
-      $('#quickApartmentForm').submit(function(e) {
+      $('#quickApartmentForm').submit(function (e) {
         e.preventDefault();
         var form = $(this);
         var btn = form.find('button[type="submit"]');
         var orig = btn.html();
         btn.html('<i class="fas fa-spinner fa-spin"></i> Sending...').prop('disabled', true);
-        $.ajax({ type: 'POST', url: 'https://formspree.io/f/xqpkzzqd', data: new FormData(this), processData: false, contentType: false, dataType: 'json',
-          success: function(r) {
+        $.ajax({
+          type: 'POST', url: 'https://formspree.io/f/xqpkzzqd', data: new FormData(this), processData: false, contentType: false, dataType: 'json',
+          success: function (r) {
             if (r.ok) { alert('Thank you for your interest! Our apartment team will contact you within 2 hours.'); form[0].reset(); }
             else { alert('Error sending message. Please try again.'); }
             btn.html(orig).prop('disabled', false);
           },
-          error: function() { alert('Error sending message. Please try again.'); btn.html(orig).prop('disabled', false); }
+          error: function () { alert('Error sending message. Please try again.'); btn.html(orig).prop('disabled', false); }
         });
       });
     });
@@ -2709,5 +3065,3 @@
 </body>
 
 </html>
-
-<!-- Update: gallery -->
